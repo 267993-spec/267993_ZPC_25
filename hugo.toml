@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'ZPC-Jak vytvořit (skoro) cokoliv'
+theme = 'hugo-bearblog'
