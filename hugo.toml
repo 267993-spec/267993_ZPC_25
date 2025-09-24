@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://267993-spec.github.io/267993_ZPC_25/"
 languageCode = 'en-us'
 title = 'ZPC-Jak vytvořit (téměř) cokoliv'
 theme = 'hugo-bearblog'

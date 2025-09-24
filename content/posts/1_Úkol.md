@@ -14,6 +14,6 @@ V rámci tohoto projektu jsem vytvořil vlastní webové stránky, které dokume
 
 ## Obrázky kódu a použitého templatu
 
-![obrazek](static/images/Fotka_kodu.png)
+![obrazek](/images/Fotka_kodu.png)
 |:---------------------------------:|
 | *Obr.1 Kód úvodní stránky v HTML* |
