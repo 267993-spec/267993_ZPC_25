@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in Hugo on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Úkol</title>
+      <link>/posts/1_%C3%BAkol/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>/posts/1_%C3%BAkol/</guid>
+      <description>&lt;h1 id=&#34;1-úkol&#34;&gt;1. Úkol&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;V rámci tohoto projektu jsem vytvořil vlastní webové stránky, které dokumentují postup a řešení jednotlivých dílčích úkolů i finálního projektu. Web obsahuje úvodní stránku s přehledem celého portfolia, sekci „O mně“, kde se představuje autor a jeho motivace, a jednotlivé příspěvky k dílčím úkolům, které podrobně popisují použitou metodu, postupy a dosažené výsledky. Součástí webu je také samostatný příspěvek k finálnímu projektu, který shrnuje celý proces tvorby, klíčové poznatky a ukázky realizovaného řešení.&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Konstrukting on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>/tags/konstrukting/</link>
+    <description>Recent content in Konstrukting on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="/tags/konstrukting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>O mně</title>
+      <link>/posts/o_mn%C4%9B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/posts/o_mn%C4%9B/</guid>
+      <description>&lt;h1 id=&#34;o-mně&#34;&gt;O mně&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;Jmenuji se Matyáš Vobořil a jsem student Fakulty strojního inženýrství na VUT v Brně, obor Konstrukční inženýrství. Už od střední školy se věnuji strojírenství a 3D modelování, díky čemuž mám zkušenosti nejen z akademického prostředí, ale také z praxe v konstrukci a zkušebních laboratořích.&#xA;&lt;p&gt;Baví mě hledat řešení technických problémů, pracovat v týmu a posouvat své znalosti dál. Volný čas věnuji posilování, cestování a osobnímu rozvoji – ať už prostřednictvím sportu, čtení nebo experimentování s 3D tiskem. Díky rodinné tradici konstruktérů je pro mě tento obor více než jen studium – je to směr, kterým chci jít i do budoucna.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1. Úkol</title>
+      <link>/posts/1_%C3%BAkol/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>/posts/1_%C3%BAkol/</guid>
+      <description>&lt;h1 id=&#34;1-úkol&#34;&gt;1. Úkol&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;V rámci tohoto projektu jsem vytvořil vlastní webové stránky, které dokumentují postup a řešení jednotlivých dílčích úkolů i finálního projektu. Web obsahuje úvodní stránku s přehledem celého portfolia, sekci „O mně“, kde se představuje autor a jeho motivace, a jednotlivé příspěvky k dílčím úkolům, které podrobně popisují použitou metodu, postupy a dosažené výsledky. Součástí webu je také samostatný příspěvek k finálnímu projektu, který shrnuje celý proces tvorby, klíčové poznatky a ukázky realizovaného řešení.&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

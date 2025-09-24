@@ -2,14 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/druhy-tyden/</loc>
+    <loc>/posts/o_mn%C4%9B/</loc>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>/posts/individu%C3%A1ln%C3%AD_projekt/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/</loc>
+    <loc>/posts/1_%C3%BAkol/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>/posts/2_%C3%BAkol/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>/posts/3_%C3%BAkol/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/posts/4_%C3%BAkol/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/posts/5_%C3%BAkol/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/tags/konstrukting/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/tags/markdown/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/tags/syntax/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-09-22T20:24:11+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/tags/strojar/</loc>
   </url>
 </urlset>

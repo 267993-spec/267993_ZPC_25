@@ -1,4 +1,13 @@
-baseURL = 'https://example.org/'
+baseURL = "/"
 languageCode = 'en-us'
-title = 'ZPC-Jak vytvořit (skoro) cokoliv'
+title = 'ZPC-Jak vytvořit (téměř) cokoliv'
 theme = 'hugo-bearblog'
+
+[menu]
+  [[menu.main]]
+    name = "Domů"
+    url = "/"
+    weight = 1
+ 
+[markup.goldmark.renderer]
+unsafe = true
