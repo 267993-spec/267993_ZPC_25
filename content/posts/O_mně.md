@@ -17,7 +17,7 @@ Jmenuji se Matyáš Vobořil a jsem student Fakulty strojního inženýrství na
 Baví mě hledat řešení technických problémů, pracovat v týmu a posouvat své znalosti dál. Volný čas věnuji posilování, cestování a osobnímu rozvoji – ať už prostřednictvím sportu, čtení nebo experimentování s 3D tiskem. Díky rodinné tradici konstruktérů je pro mě tento obor více než jen studium – je to směr, kterým chci jít i do budoucna.
 </p>
 
-| ![Moje fotka](/images/Profilovka3.png) |
+| ![Moje fotka](static/images/Profilovka3.png) |
 |:---------------------------------:|
 | *Obr.1 Autor webu na předávání výhry krajského kola SOČ* |
 
