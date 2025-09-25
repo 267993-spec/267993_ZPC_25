@@ -7,6 +7,7 @@ tags = [
     "Strojar",
     "Konstrukting",
 ]
+slug = "O_mne"
 +++
 
 # O mně
