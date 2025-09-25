@@ -6,7 +6,7 @@ theme = 'hugo-bearblog'
 [menu]
   [[menu.main]]
     name = "Domů"
-    url = "/"
+    url = "https://267993-spec.github.io/267993_ZPC_25/"
     weight = 1
  
 [markup.goldmark.renderer]

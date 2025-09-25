@@ -3,11 +3,11 @@ title = "O mně"
 menu = "main"
 weight = 20
 draft = false
+type = "post"
 tags = [
     "Strojar",
     "Konstrukting",
 ]
-slug = "O_mne"
 +++
 
 # O mně
