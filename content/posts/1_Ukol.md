@@ -15,7 +15,7 @@ V rámci tohoto projektu jsem vytvořil vlastní webové stránky, které dokume
 
 
 <div style="text-align: center;">
-    <img src="/267993_ZPC_25/images/Fotka_Kodu.png" alt="Profilovka">
+    <img src="/267993_ZPC_25/images/Fotka_kodu.png" alt="Kod">
     <p style="transform: skewX(-10deg); display:inline-block;">  
     Obr.1 Kód úvodní stránky v HTML
     </p>
