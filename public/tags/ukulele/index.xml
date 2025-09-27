@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ukulele on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>https://267993-spec.github.io/267993_ZPC_25/tags/ukulele/</link>
+    <description>Recent content in Ukulele on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="https://267993-spec.github.io/267993_ZPC_25/tags/ukulele/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Individální projekt</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/posts/individualni_projekt/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/posts/individualni_projekt/</guid>
+      <description>&lt;h1 id=&#34;samoladící-ukulele&#34;&gt;Samoladící ukulele&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je patrné z náčrtu níže, plánem je přesunout celý ladicí mechanismus do těla nástroje a tím zároveň skrýt celý systém samoladění, který bude zakrytý deskami vyřezanými na plotru. Do těla chci také umístit mechanismus pro automatizaci ladění. &#xA;&lt;p&gt;Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenášen přes převod na ozubený hřeben. Hrot přejede přes strunu a tím na ni brnkne. Piezo senzor umístěný v kobylce zaznamená vzniklou frekvenci, signál projde přes buffer do Arduina, které jej vyhodnotí a následně vyšle pokyn příslušnému krokovému motoru. Ten pak otočí ladicím mechanizmem a napne konkrétní strunu tak, aby byla správně naladěná. Součástí projektu bude také výstup z Arduina na jack konektor.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
