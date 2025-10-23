@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2D on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>http://localhost:1313/267993_ZPC_25/tags/2d/</link>
+    <description>Recent content in 2D on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/267993_ZPC_25/tags/2d/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Úkol</title>
+      <link>http://localhost:1313/267993_ZPC_25/posts/2_ukol/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>http://localhost:1313/267993_ZPC_25/posts/2_ukol/</guid>
+      <description>&lt;h1 id=&#34;2-úkol&#34;&gt;2. Úkol&lt;/h1&gt;&#xA;&lt;div style=&#34;flex: 1 1 50%; min-width: 260px; text-align: justify;&#34;&gt;&#xA;      &lt;p&gt;&#xA;        Vytvořil jsem 3D model tradičního japonského domu v programu &lt;em&gt;Autodesk Inventor&lt;/em&gt;. Model jsem navrhl tak, aby se jednotlivé části daly přesně vyřezat a následně složit z kartonu bez použití lepidla. Po dokončení návrhu jsem ho exportoval do formátu &lt;strong&gt;DXF&lt;/strong&gt; a v programu &lt;em&gt;AutoCAD&lt;/em&gt; jsem upravil kontury tak, aby byly vhodné pro laserové řezání.&#xA;      &lt;/p&gt;&#xA;      &lt;p&gt;&#xA;        Díly jsem potom nechal vypálit do kartonu a celý model jsem ručně složil. Při návrhu jsem použil &lt;strong&gt;5 mm otvory&lt;/strong&gt;, které umožnily, aby zámečky jednotlivých dílů do sebe přesně zapadly a konstrukce tak držela pevně i bez dalších spojovacích prvků. Zajímavým prvkem byl především systém upevnění vrchní střechy, který jsem navrhl tak, aby byl stabilní a zároveň snadno sestavitelný. Dalším výrazným detailem je malý kamínek umístěný na základní desce, který dodává modelu autentičnost a připomíná typický prvek japonských zahrad.&#xA;      &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
