@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Syntax on ZPC-Jak vytvořit (téměř) cokoliv</title>
-    <link>https://267993-spec.github.io/267993_ZPC_25/tags/syntax/</link>
+    <link>http://localhost:1313/267993_ZPC_25/tags/syntax/</link>
     <description>Recent content in Syntax on ZPC-Jak vytvořit (téměř) cokoliv</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
-    <atom:link href="https://267993-spec.github.io/267993_ZPC_25/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/267993_ZPC_25/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5. Úkol</title>
-      <link>https://267993-spec.github.io/267993_ZPC_25/posts/5_ukol/</link>
+      <link>http://localhost:1313/267993_ZPC_25/posts/5_ukol/</link>
       <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
-      <guid>https://267993-spec.github.io/267993_ZPC_25/posts/5_ukol/</guid>
-      <description>&lt;h1 id=&#34;5-úkol&#34;&gt;5. Úkol&lt;/h1&gt;</description>
+      <guid>http://localhost:1313/267993_ZPC_25/posts/5_ukol/</guid>
+      <description>&lt;div style=&#34;text-align: justify;&#34;&gt;&#xA;  &lt;div style=&#34;flex: 1 1 50%; min-width: 260px; text-align: justify;&#34;&gt;&#xA;    &lt;h2&gt;Elektronický obvod&lt;/h2&gt;&#xA;    &lt;p&gt;&#xA;      V rámci tohoto projektu jsem navrhl a vytiskl 3D model vačkového mechanismu se dvěma vačkami. Model jsem vytvořil v programu Autodesk Inventor, kde jsem navrhl všechny díly mechanismu tak, aby do sebe přesně zapadly a pohyb byl plynulý.&#xA;    &lt;/p&gt;&#xA;    &lt;p&gt;&#xA;      První vačka zvedá rybu, která se periodicky objevuje nad hladinou vody, a druhá vačka přes systém pák a kulisy ovládá ruku ledního medvěda, který se snaží rybu chytit.&#xA;    &lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

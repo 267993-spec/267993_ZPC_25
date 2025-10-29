@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arduino on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>https://267993-spec.github.io/267993_ZPC_25/tags/arduino/</link>
+    <description>Recent content in Arduino on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="https://267993-spec.github.io/267993_ZPC_25/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5. Úkol</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/posts/5_ukol/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/posts/5_ukol/</guid>
+      <description>&lt;div style=&#34;max-width: 900px; margin: 0 auto; text-align: justify;&#34;&gt;&#xA;  &lt;h2 style=&#34;font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff;&#34;&gt;Elektronický obvod s mikrokontrolérem&lt;/h2&gt;&#xA;  &lt;p&gt;&#xA;  V rámci miniprojektu z elektrotechniky jsem vytvořil jednoduchý &lt;strong&gt;MP3 přehrávač s Arduinem Uno&lt;/strong&gt; a bzučákem. Projekt přehrává pět známých melodií: &#xA;   &lt;em&gt;The Godfather&lt;/em&gt;, &lt;em&gt;Star Wars&lt;/em&gt;, &lt;em&gt;Tetris&lt;/em&gt;, &lt;em&gt;Cantina Band&lt;/em&gt; a &lt;em&gt;Harry Potter&lt;/em&gt;. &#xA;  Vše je zapojeno přes &lt;strong&gt;breadboard&lt;/strong&gt;, který propojuje tři tlačítka a pět LED diod pro signalizaci.&#xA;  &lt;/p&gt;&#xA;  &lt;h2&gt;Ovládání&lt;/h2&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;strong&gt;Tlačítko 1&lt;/strong&gt; – přehrát / pozastavit aktuální písničku,&lt;/li&gt;&#xA;    &lt;li&gt;&lt;strong&gt;Tlačítko 2&lt;/strong&gt; – přepnout na další skladbu,&lt;/li&gt;&#xA;    &lt;li&gt;&lt;strong&gt;Tlačítko 3&lt;/strong&gt; – přepnout na předchozí skladbu.&lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;  &lt;p&gt;&#xA;  K Arduino Unu je připojeno &lt;strong&gt;pět modrých LED diod&lt;/strong&gt; (piny 5–9) s odpory o hodnotě &lt;strong&gt;510 Ω&lt;/strong&gt; (&lt;em&gt;zelená, hnědá, červená, zlatá&lt;/em&gt;), &#xA;  které ukazují, která písnička je právě zvolena.&#xA;  &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

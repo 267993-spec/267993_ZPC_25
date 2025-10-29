@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3D Modelování on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>http://localhost:1313/267993_ZPC_25/tags/3d-modelov%C3%A1n%C3%AD/</link>
+    <description>Recent content in 3D Modelování on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/267993_ZPC_25/tags/3d-modelov%C3%A1n%C3%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Úkol — Japonský dům z kartonu</title>
+      <link>http://localhost:1313/267993_ZPC_25/posts/2_ukol/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>http://localhost:1313/267993_ZPC_25/posts/2_ukol/</guid>
+      <description>&lt;article style=&#34;max-width: 900px; margin: 0 auto; padding: 1rem; font-size: 1.05rem; line-height: 1.7; color: #222;&#34;&gt;&#xA;  &lt;h2 style=&#34;text-align: center; margin-top: 1rem; font-size: 2rem;&#34;&gt;2D grafika a řezání – Japonský dům z kartonu&lt;/h2&gt;&#xA;  &lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;    V rámci tohoto úkolu jsem se zaměřil na propojení tradiční architektury s moderní technologií výroby. Cílem bylo vytvořit&#xA;    detailní model &lt;strong&gt;tradičního japonského domu&lt;/strong&gt;, který by bylo možné vyřezat laserem z kartonu a následně&#xA;    složit bez použití lepidla nebo dalších spojovacích prvků.&#xA;  &lt;/p&gt;&#xA;  &lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;    Model jsem vytvořil v programu &lt;em&gt;Autodesk Inventor&lt;/em&gt;, kde jsem si dal záležet na přesnosti rozměrů a estetice&#xA;    jednotlivých částí. Po dokončení návrhu jsem model exportoval do formátu &lt;strong&gt;DXF&lt;/strong&gt; pomocí &lt;em&gt;AutoCADu&lt;/em&gt;,&#xA;    kde jsem upravil kontury a připravil jednotlivé díly pro laserové řezání. Klíčovým prvkem byly &lt;strong&gt;5 mm otvory&lt;/strong&gt;,&#xA;    které umožnily přesné zacvaknutí zámečků a tím i pevné spojení částí bez nutnosti lepení.&#xA;  &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

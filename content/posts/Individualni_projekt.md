@@ -10,6 +10,9 @@ tags = [
 ]
 +++
 # Samoladící ukulele
+
+<div style="text-align: justify;">
+
 <p style="text-align: justify;">
 Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je patrné z náčrtu níže, plánem je přesunout celý ladicí mechanismus do těla nástroje a tím zároveň skrýt celý systém samoladění, který bude zakrytý deskami vyřezanými na plotru. Do těla chci také umístit mechanismus pro automatizaci ladění. 
 
@@ -21,4 +24,5 @@ Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenáše
     Obr.1 První náčrt prototypu
     </p>
     
+</div>
 </div>

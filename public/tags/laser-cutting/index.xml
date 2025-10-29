@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laser Cutting on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>https://267993-spec.github.io/267993_ZPC_25/tags/laser-cutting/</link>
+    <description>Recent content in Laser Cutting on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="https://267993-spec.github.io/267993_ZPC_25/tags/laser-cutting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Úkol — Japonský dům z kartonu</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/posts/2_ukol/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/posts/2_ukol/</guid>
+      <description>&lt;h2 style=&#34;font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff;&#34;&gt;&#xA;  2D grafika a řezání — Japonský dům&#xA;&lt;/h2&gt;&#xA;&lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;  Tento úkol byl zaměřen na spojení tradiční architektury s moderní technologií výroby. &#xA;  Mnou zvoleným cílem bylo vytvořit &lt;strong&gt;model tradičního japonského domu&lt;/strong&gt; z kartonu, který by bylo možné vyřezat pomocí laseru &#xA;  a následně sestavit bez použití lepidla nebo dalších spojovacích prostředků.&#xA;&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: justify;&#34;&gt;&#xA;  Model jsem vytvořil v programu &lt;em&gt;Autodesk Inventor&lt;/em&gt;, kde jsem pečlivě navrhl každou část tak, &#xA;  aby do sebe přesně zapadla. Následně jsem jej exportoval do formátu &lt;strong&gt;DXF&lt;/strong&gt; pomocí &lt;em&gt;AutoCADu&lt;/em&gt; &#xA;  a upravil kontury pro přesné řezání laserem.&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

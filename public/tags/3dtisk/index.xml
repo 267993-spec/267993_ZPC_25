@@ -13,7 +13,7 @@
       <link>https://267993-spec.github.io/267993_ZPC_25/posts/3_ukol/</link>
       <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
       <guid>https://267993-spec.github.io/267993_ZPC_25/posts/3_ukol/</guid>
-      <description>&lt;h1 id=&#34;3-úkol&#34;&gt;3. Úkol&lt;/h1&gt;&#xA;&lt;div style=&#34;flex: 1 1 50%; min-width: 260px; text-align: justify;&#34;&gt;&#xA;&lt;h2&gt;3D modelování a tisk&lt;/h2&gt;&#xA;      &lt;p&gt;&#xA;    V rámci tohoto projektu jsem navrhl a vytiskl 3D model vačkového mechanismu se dvěma vačkami. Model jsem vytvořil v programu Autodesk Inventor, kde jsem navrhl všechny díly mechanismu tak, aby do sebe přesně zapadly a pohyb byl plynulý.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;    První vačka zvedá rybu, která se periodicky objevuje nad hladinou vody, a druhá vačka přes systém pák a kulisy ovládá ruku ledního medvěda, který se snaží rybu chytit.&#xA;&lt;/p&gt;</description>
+      <description>&lt;div style=&#34;max-width: 900px; margin: 0 auto; text-align: justify; line-height: 1.7;&#34;&gt;&#xA;&lt;h2 style=&#34;font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff;&#34;&gt;&#xA;  3D modelování a tisk&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&#xA;V rámci tohoto projektu jsem navrhl a vytiskl &lt;strong&gt;3D model vačkového mechanismu se dvěma vačkami&lt;/strong&gt;. &#xA;Model jsem vytvořil v programu &lt;em&gt;Autodesk Inventor&lt;/em&gt;, kde jsem navrhl všechny díly mechanismu tak, &#xA;aby do sebe přesně zapadly a pohyb byl plynulý.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;První vačka zvedá rybu, která se periodicky objevuje nad hladinou vody, &#xA;a druhá vačka přes systém pák a kulisy ovládá ruku ledního medvěda, který se snaží rybu chytit.&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

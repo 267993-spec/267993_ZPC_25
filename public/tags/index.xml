@@ -9,10 +9,31 @@
     <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
     <atom:link href="https://267993-spec.github.io/267993_ZPC_25/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>3D Modelovani</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/tags/3d-modelovani/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/tags/3d-modelovani/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>3Dtisk</title>
       <link>https://267993-spec.github.io/267993_ZPC_25/tags/3dtisk/</link>
       <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
       <guid>https://267993-spec.github.io/267993_ZPC_25/tags/3dtisk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arduino</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/tags/arduino/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/tags/arduino/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Elektro</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/tags/elektro/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/tags/elektro/</guid>
       <description></description>
     </item>
     <item>
@@ -44,10 +65,10 @@
       <description></description>
     </item>
     <item>
-      <title>Markdown</title>
-      <link>https://267993-spec.github.io/267993_ZPC_25/tags/markdown/</link>
+      <title>Laser Cutting</title>
+      <link>https://267993-spec.github.io/267993_ZPC_25/tags/laser-cutting/</link>
       <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
-      <guid>https://267993-spec.github.io/267993_ZPC_25/tags/markdown/</guid>
+      <guid>https://267993-spec.github.io/267993_ZPC_25/tags/laser-cutting/</guid>
       <description></description>
     </item>
     <item>
@@ -69,13 +90,6 @@
       <link>https://267993-spec.github.io/267993_ZPC_25/tags/skener/</link>
       <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
       <guid>https://267993-spec.github.io/267993_ZPC_25/tags/skener/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Syntax</title>
-      <link>https://267993-spec.github.io/267993_ZPC_25/tags/syntax/</link>
-      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
-      <guid>https://267993-spec.github.io/267993_ZPC_25/tags/syntax/</guid>
       <description></description>
     </item>
     <item>

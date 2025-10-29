@@ -1,0 +1,39 @@
+{{ $file := .Get "file" }}
+{{ $content := readFile $file }}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+.code-window {
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  font-family: 'Fira Code', monospace;
+}
+.code-header {
+  background: #2d2d2d;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.code-content { padding: 1rem; overflow-x: auto; }
+</style>
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span style="color:#ccc; margin-left:10px;">{{ path.Base $file }}</span>
+  </div>
+  <div class="code-content">
+    <pre><code class="language-cpp">{{ $content | safeHTML }}</code></pre>
+  </div>
+</div>
