@@ -135,15 +135,21 @@ else noTone(bzučák);</code></pre>
     <tr><td><code>if (prehravaSe)</code></td><td>Hlavní stav</td><td>Rozhoduje, zda se přehrává, nebo ne</td></tr>
   </table>
 
+<div style="text-align: center; margin-top: 2rem;">
+    <div style="display: inline-block; margin: 10px;">
+      <img src="/267993_ZPC_25/images/OBVOD.png" alt="Náhled obvodu v Tinkercadu" style="width: 100%; max-width: 600px; border-radius: 10px;">
+      <p style="transform: skewX(-10deg);">Obr. 1 Sestava MP3 obvodu z vrchu (kondenzátor je jako bružák)</p>
+    </div>
+
   <div style="text-align: center; margin-top: 2rem;">
     <div style="display: inline-block; margin: 10px;">
       <img src="/267993_ZPC_25/images/Obvod1.jpg" alt="Náhled obvodu" style="width: 100%; max-width: 600px; border-radius: 10px;">
-      <p style="transform: skewX(-10deg);">Obr. 1 Sestava MP3 obvodu z vrchu</p>
+      <p style="transform: skewX(-10deg);">Obr. 2 Sestava MP3 obvodu z vrchu</p>
     </div>
 
 <div style="display: inline-block; margin: 10px;">
       <img src="/267993_ZPC_25/images/Obvod2.jpg" alt="Pohled zepředu" style="width: 100%; max-width: 600px; border-radius: 10px;">
-      <p style="transform: skewX(-10deg);">Obr. 2 MP3 obvod zepředu</p>
+      <p style="transform: skewX(-10deg);">Obr. 3 MP3 obvod zepředu</p>
     </div>
 
 <div style="display: inline-block; margin: 10px;">
