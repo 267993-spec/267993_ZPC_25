@@ -15,7 +15,7 @@ tags = [
 </h2>
 
 <p>
-Pro tento experiment jsem použil laserový skener <em>Simscam</em> k digitalizaci 3D vytištěné židle. 
+Pro tento úkol jsem použil laserový skener <em>Simscam</em> k digitalizaci 3D vytištěné židle. 
 Povrch před skenováním jsem nepřipravil, protože nebyl příliš lesklý a sken probíhal spolehlivě i bez matování.
 </p>
 

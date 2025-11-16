@@ -25,4 +25,13 @@ Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenáše
     </p>
     
 </div>
+Pokrok ve vývoji – od elektroniky po první prototyp
+
+Po úvodním návrhu a popisu principu samoladícího ukulele jsem se pustil do realizace samotné elektroniky. Základem systému je Arduino, které řídí krokové motory a vyhodnocuje signál z piezo senzoru. Po úspěšném zapojení všech komponent jsem vytvořil první funkční verzi elektroniky – ta dokáže detekovat tón a reagovat na odchylku od správného ladění.
+
+Aby byl nástroj co nejvíce „clean“ a bez zbytečných ovládacích prvků, rozhodl jsem se projekt rozšířit o Wi-Fi modul. Díky tomu lze celé ladění ovládat bezdrátově – například přes webové rozhraní nebo mobilní aplikaci. Tím jsem se vyhnul nutnosti používat fyzická tlačítka a displeje, které by rušily vzhled nástroje.
+
+Dalším krokem bylo navrhnout mechanickou část ukulele. Ve 3D CADu jsem vymodeloval první prototyp těla i krku, abych otestoval vůle, usazení motorů, převodů a senzorů. Model jsem vytiskl na 3D tiskárně a všechny díly zkušebně sestavil. Test potvrdil, že většina rozměrů i uložení dílů sedí, takže jsem mohl pokračovat k prvnímu kompletnímu prototypu.
+
+V další fázi mě čeká testování funkčnosti – konkrétně napínání strun, funkce brnkacího mechanismu a také odolnost a tuhost konstrukce. Tyto testy rozhodnou o tom, jak bude vypadat finální verze a jaké úpravy bude potřeba provést před výrobou estetické verze ukulele.
 </div>
