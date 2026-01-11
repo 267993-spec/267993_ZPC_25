@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mechatronika on ZPC-Jak vytvořit (téměř) cokoliv</title>
+    <link>http://localhost:1313/267993_ZPC_25/tags/mechatronika/</link>
+    <description>Recent content in Mechatronika on ZPC-Jak vytvořit (téměř) cokoliv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Sep 2025 20:24:11 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/267993_ZPC_25/tags/mechatronika/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vývoj autonomního ladicího systému pro elektroakustické ukulele</title>
+      <link>http://localhost:1313/267993_ZPC_25/posts/individualni_projekt/</link>
+      <pubDate>Mon, 22 Sep 2025 20:24:11 +0200</pubDate>
+      <guid>http://localhost:1313/267993_ZPC_25/posts/individualni_projekt/</guid>
+      <description>&lt;h1 id=&#34;implementace-autonomního-ladicího-systému-pro-strunné-nástroje&#34;&gt;Implementace autonomního ladicího systému pro strunné nástroje&lt;/h1&gt;&#xA;&lt;div style=&#34;text-align: justify;&#34;&gt;&#xA;&lt;h2 id=&#34;1-technický-koncept-a-systémová-architektura&#34;&gt;1. Technický koncept a systémová architektura&lt;/h2&gt;&#xA;&lt;p&gt;Cílem projektu je návrh a realizace funkčního prototypu mechatronického systému pro automatické ladění elektrického ukulele. Konstrukční řešení integruje ladicí mechanismus přímo do korpusu nástroje, čímž dochází k estetickému sjednocení a ochraně vnitřních komponent.&lt;/p&gt;&#xA;&lt;p&gt;Mechanismus je založen na uzavřené zpětnovazební smyčce:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Excitace:&lt;/strong&gt; Lineární mechanismus poháněný kontinuálním servem provede brnk na strunu.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Detekce:&lt;/strong&gt; Akustický signál je snímán piezoelektrickým senzorem nebo mikrofonem.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Analýza:&lt;/strong&gt; Mikroprocesor Arduino provádí frekvenční analýzu vstupního signálu.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Korekce:&lt;/strong&gt; Na základě odchylky od referenční frekvence vysílá řídicí jednotka signál krokovému motoru, který upraví napětí struny.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div style=&#34;text-align: center; margin-top: 1.5rem; margin-bottom: 1.5rem;&#34;&gt;&#xA;  &lt;div style=&#34;display: inline-block; border: 1px solid #ddd; padding: 10px; background: #f9f9f9;&#34;&gt;&#xA;    &lt;img src=&#34;http://localhost:1313/267993_ZPC_25/images/Ukulele_nacrt.png&#34; alt=&#34;Technický nákres&#34; style=&#34;width: 100%; max-width: 350px; border-radius: 4px; display: block; margin: 0 auto;&#34;&gt;&#xA;    &lt;p style=&#34;font-size: 0.85rem; margin-top: 8px; color: #555;&#34;&gt;&lt;i&gt;Obr. 1: Schéma vnitřního uspořádání komponent v těle nástroje&lt;/i&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

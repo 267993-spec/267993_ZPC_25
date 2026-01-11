@@ -11,27 +11,415 @@ tags = [
 +++
 # Samoladící ukulele
 
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+
+<style>
+    /* VĚDECKÝ STYL TEXTU */
+    .scientific-paper {
+        font-family: "Georgia", "Times New Roman", serif;
+        line-height: 1.8;
+        color: #1a1a1a;
+        text-align: justify;
+    }
+
+    /* STYL OBRÁZKU - NÁHLED */
+    .img-preview {
+        width: 300px;              /* Velikost náhledu */
+        border-radius: 12px;       /* ZAOBLENÉ ROHY */
+        cursor: pointer;
+        transition: 0.3s ease;
+        border: 1px solid #ddd;
+        display: block;
+        margin: 10px auto;
+    }
+    .img-preview:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .img-previewl {
+        width: 600px;              /* Velikost náhledu */
+        border-radius: 12px;       /* ZAOBLENÉ ROHY */
+        cursor: pointer;
+        transition: 0.3s ease;
+        border: 1px solid #ddd;
+        display: block;
+        margin: 10px auto;
+    }
+    .img-previewl:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* POP-UP OKNO (MODAL) */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 9999;
+        align-items: center; justify-content: center;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;       /* ZAOBLENÉ ROHY VELKÉHO OBRÁZKU */
+        border: 2px solid white;
+    }
+
+    .img-preview-large {
+    max-width: 600px;   /* VĚTŠÍ náhledy jen tady */
+}
+
+    .close-x {
+        position: absolute;
+        top: 20px; right: 30px;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+
+
 <div style="text-align: justify;">
+
+## 1 Koncept
 
 <p style="text-align: justify;">
 Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je patrné z náčrtu níže, plánem je přesunout celý ladicí mechanismus do těla nástroje a tím zároveň skrýt celý systém samoladění, který bude zakrytý deskami vyřezanými na plotru. Do těla chci také umístit mechanismus pro automatizaci ladění. 
 
 Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenášen přes převod na ozubený hřeben. Hrot přejede přes strunu a tím na ni brnkne. Piezo senzor umístěný v kobylce zaznamená vzniklou frekvenci, signál projde přes buffer do Arduina, které jej vyhodnotí a následně vyšle pokyn příslušnému krokovému motoru. Ten pak otočí ladicím mechanismem a napne konkrétní strunu tak, aby byla správně naladěná. Součástí projektu bude také výstup z Arduina na jack konektor.
 </p>
-<div style="text-align: center;">
-    <img src="/267993_ZPC_25/images/Ukulele_nacrt.png" alt="Nacrt">
-    <p style="transform: skewX(-10deg); display:inline-block;">  
-    Obr.1 První náčrt prototypu
-    </p>
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/Ukulele_nacrt.png" 
+         class="img-preview" 
+         onclick="document.getElementById('popup1').style.display='flex'">
     
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 1: Náčrt prototypu</p>
+
+  <div id="popup1" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/Ukulele_nacrt.png" class="modal-content">
+    </div>
 </div>
-Pokrok ve vývoji – od elektroniky po první prototyp
 
-Po úvodním návrhu a popisu principu samoladícího ukulele jsem se pustil do realizace samotné elektroniky. Základem systému je Arduino, které řídí krokové motory a vyhodnocuje signál z piezo senzoru. Po úspěšném zapojení všech komponent jsem vytvořil první funkční verzi elektroniky – ta dokáže detekovat tón a reagovat na odchylku od správného ladění.
+## 2 Vývoj 
 
-Aby byl nástroj co nejvíce „clean“ a bez zbytečných ovládacích prvků, rozhodl jsem se projekt rozšířit o Wi-Fi modul. Díky tomu lze celé ladění ovládat bezdrátově – například přes webové rozhraní nebo mobilní aplikaci. Tím jsem se vyhnul nutnosti používat fyzická tlačítka a displeje, které by rušily vzhled nástroje.
+<em>"I cesta dlouhá tisíc mil začíná prvním krokem." </em>
 
-Dalším krokem bylo navrhnout mechanickou část ukulele. Ve 3D CADu jsem vymodeloval první prototyp těla i krku, abych otestoval vůle, usazení motorů, převodů a senzorů. Model jsem vytiskl na 3D tiskárně a všechny díly zkušebně sestavil. Test potvrdil, že většina rozměrů i uložení dílů sedí, takže jsem mohl pokračovat k prvnímu kompletnímu prototypu.
+ČÍNSKÉ PŘÍSLOVÍ
 
-V další fázi mě čeká testování funkčnosti – konkrétně napínání strun, funkce brnkacího mechanismu a také odolnost a tuhost konstrukce. Tyto testy rozhodnou o tom, jak bude vypadat finální verze a jaké úpravy bude potřeba provést před výrobou estetické verze ukulele.
+<div style="text-align: justify;">
+
+### 2.1 Elektronika a první výzvy
+
+Po úvodním návrhu a popisu principu samoladicího ukulele jsem se pustil do rešerše elektronických komponent a jejich objednání. Primárním cílem nultého prototypu bylo zapojení všech elektronických komponent a jejich vzájemná komunikace s Arduinem. Tuto část projektu jsem chtěl vyřešit co nejdříve, neboť jsem nikdy dříve s Arduinem ani elektronikou nepracoval, a jednalo se tedy o mou největší výzvu.
+
+Hned na počátku jsem narazil na problém s nedostatečným počtem digitálních pinů Arduina pro ovládání čtyř krokových motorů. Tento problém jsem vyřešil použitím dvou rozšiřujících PCF modulů, které jsou ovládány pomocí dvou analogových pinů a poskytují celkem 16 digitálních výstupů, což přesně odpovídalo mým potřebám.
+
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:400px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/ELETEST.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 1 – Funkčnost prvního prototypu elektroniky
+    </p>
 </div>
+
+
+
+---
+
+### 2.2 Měření frekvence a volba senzorů
+
+Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem.
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/ELEZAPOJENI.jpg" 
+         class="img-preview" 
+         onclick="document.getElementById('popup2').style.display='flex'">
+    
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 2: Zapojení piezosenzoru</p>
+
+  <div id="popup2" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/ELEZAPOJENI.jpg" class="modal-content">
+    </div>
+</div>
+
+---
+
+###  Bezdrátové ovládání a design elektroniky
+
+Aby byl nástroj co nejvíce čistý („clean“) a bez zbytečných ovládacích prvků, rozhodl jsem se projekt rozšířit o Wi-Fi modul jako možné rozšíření. Díky tomu lze ladění ovládat bezdrátově, například prostřednictvím webového rozhraní nebo mobilní aplikace. Tím jsem se vyhnul nutnosti použití fyzických tlačítek a displejů, které by narušovaly vzhled nástroje. Zároveň jsem se rozhodl propojit pouze komunikaci z wifi modulu do arduina, jelikož jsem odezvu nástroje nepotřeboval.
+
+Níže vidíme nákres celého projektu navržený v prostředí KiCad. Srdcem systému je kombinace mikrokontrolerů Arduino UNO a Wemos D1 mini, což umožňuje propojení klasického řízení s Wi-Fi konektivitou. K efektivnímu využití pinů jsou použity dva I/O expandéry PCF8574AP na I2C sběrnici , které skrze čtveřici řídících jednotek ULN2003 ovládají čtyři krokové motory a jeden servo motor. Součástí schématu je také mikrofon MAX4466 a integrovaný napájecí management s regulátorem LM2596 , který zajišťuje stabilních 5V ze vstupního 12V zdroje.
+
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <!-- Náhled SVG na stránce -->
+    <div style="display: inline-block; background-color: white; padding: 1rem; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); cursor: pointer;" 
+         onclick="document.getElementById('svg-popup').style.display='flex'">
+        <img src="/267993_ZPC_25/images/SCHEME.svg" 
+             style="max-width: 600px; width: 100%; height: auto; display: block; margin: auto;">
+    </div>
+    <p class="white-text" style="font-style: italic; font-size: 0.9rem; margin-top: 0.5rem;">
+    Obr. 3: Schéma zapojení elektrického obvodu
+    </p>
+
+  <!-- Modal pro zvětšení -->
+  <div id="svg-popup" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <div class="modal-content white-bg">
+            <img src="/267993_ZPC_25/images/SCHEME.svg" style="max-width: 90vw; max-height: 90vh; width: auto; height: auto; display: block; margin: auto;">
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    align-items: center; 
+    justify-content: center;
+}
+
+.close-x {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-content.white-bg {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+>
+
+
+<style>
+    /* Bílé pozadí pro modal */
+    .white-bg {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        max-width: 90%;
+        max-height: 90%;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Scrollovatelné SVG */
+    .svg-scroll {
+        max-height: 80vh; /* maximální výška v viewportu */
+        overflow-y: auto; /* scroll, pokud je vyšší než viewport */
+        width: 100%;
+    }
+</style>
+
+
+---
+
+###  Mechanická konstrukce a první prototyp
+
+Dalším krokem byl návrh mechanické části ukulele. Ve 3D CADu jsem vymodeloval první prototyp těla i krku, abych otestoval vůle, usazení motorů, převodů a senzorů. Model jsem vytiskl na 3D tiskárně a všechny díly zkušebně sestavil. Test potvrdil, že většina rozměrů i uložení dílů je správná, což mi umožnilo pokračovat k prvnímu kompletnímu prototypu.
+
+Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem proto k druhé iteraci, ve které jsem přemodeloval celé tělo. Změnil jsem úhel napojení krku o 15° vůči horní ploše těla, čímž se podařilo tento problém eliminovat. Další úpravou byla výměna piezo senzorů přilepených pod deskou těla za piezo senzor umístěný přímo pod kobylkou, což výrazně ušetřilo místo.
+
+<model-viewer 
+    src="/267993_ZPC_25/images/Ukulele.glb"
+    alt="3D model sestavy"
+    auto-rotate
+    camera-controls
+    ar
+    style="
+        width:100%;
+        max-width:700px;
+        height:420px;
+        margin: 2rem auto;
+        display: block;
+        background-color: #355f8f;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        overflow: hidden;
+      ">
+</model-viewer>
+
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/ukulelecele.png" 
+         class="img-previewl" 
+         onclick="document.getElementById('popup3').style.display='flex'">
+    
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 4: Model ELEUKO v Inventoru</p>
+
+  <div id="popup3" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/ukulelecele.png" class="modal-content">
+    </div>
+</div>
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/ukulelemech.png" 
+         class="img-previewl" 
+         onclick="document.getElementById('popup4').style.display='flex'">
+    
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 5: Řez mechanismem brnkání</p>
+
+  <div id="popup4" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/ukulelemech.png" class="modal-content">
+    </div>
+</div>
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/ukuleleout.png" 
+         class="img-previewl" 
+         onclick="document.getElementById('popup5').style.display='flex'">
+    
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 6: Řez tělem ELEUKA</p>
+
+  <div id="popup5" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/ukuleleout.png" class="modal-content">
+    </div>
+</div>
+
+
+---
+
+###  Iterace konstrukce a testování hry
+
+Do stavu funkčního prototypu z hlediska samotného hraní jsem se dostal po dalších dvou iteracích, přičemž třetí verze již umožňovala testování hry. Do těla jsem nainstaloval ladicí kolíky, které jsem zaaretoval šrouby. Ty sloužily jak k upevnění ozubených kol na ladicí kolíky, tak k vyvození tření předepnutím, aby nedocházelo k samovolnému povolování strun.
+
+Ukulele jsem ručně naladil a otestoval jeho základní funkčnost. Jak je vidět i slyšet na videu níže, nástroj hraje poměrně čistě a překvapivě se mi na něj hrálo velmi dobře. Je však patrné, že ukulele je poměrně tiché, což jsem předpokládal, a proto jsem přidal piezo senzor pod kobylku.
+
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:600px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/HRANI.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 2 – První test akustickým hraním
+    </p>
+</div>
+
+---
+
+###  Napínání strun a ladicí mechanismus
+
+Další testování se zaměřilo na samotné napínání strun. Ukázalo se, že pro dosažení správné frekvence je zapotřebí poměrně velký utahovací moment. Původně jsem používal motory typu BYJ-48 5V, které jsem dále převodoval ozubenými koly v poměru 2:1. Tato konfigurace však nebyla dostatečná ani pro napnutí struny A, natož struny E, která je z hlediska potřebného momentu nejnáročnější.
+
+Postupně jsem proto iteroval převodový poměr a zakoupil silnější motory BYJ-48 s napětím 12V. Po pěti dalších iteracích se mi podařilo dosáhnout dostatečného momentu i pro strunu E. Finální konfigurace tedy byla motor BYJ-48 12V s převodem 6:1.
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/KOLECKA.jpg" 
+         class="img-previewl" 
+         onclick="document.getElementById('popup6').style.display='flex'">
+    
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 7: Původní iterace převodů</p>
+
+  <div id="popup6" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/KOLECKA.jpg" class="modal-content">
+    </div>
+</div>
+
+---
+
+###  Brnkací mechanismus
+
+Testování brnkacího mechanismu přineslo další výzvy. Původně jsem plánoval použití klasického serva s rozsahem 180°, avšak tento rozsah nebyl dostatečný. Kvůli převodu z pastorku na hřeben jsem potřeboval lineární rozsah přibližně 60 mm, což by vyžadovalo příliš velký pastorek. Z tohoto důvodu jsem zvolil kontinuální servo, které bylo nutné ovládat odlišným způsobem.
+
+Samotný brnkací mechanismus vyžadoval další čtyři iterace, během nichž jsem ladil parametry trsátka, aby bylo dosaženo dostatečně hlasitého zvuku. Dalším problémem byla změna vzdálenosti strun od těla při jejich napínání. Tento problém jsem vyřešil seřízením krku pomocí šroubu před samotným laděním.
+
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:600px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/BRNKANI.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 3 – Test brnkání utahování struny 
+    </p>
+</div>
+
+---
+
+###  Software a algoritmus ladění
+
+Po úspěšném otestování mechaniky následovalo propojení hardwaru se softwarem. Největší výzvou bylo spolehlivé rozpoznání frekvence struny. Kvůli omezené dynamické paměti Arduina bylo obtížné získat korektní výsledky. Použil jsem mikrofon MAX4466 umístěný v blízkosti brnkacího mechanismu. Signál byl zpracováván pomocí rychlé Fourierovy transformace (FFT), ze které byla určena frekvence.
+
+Poté, co mi začaly vycházet rozumné výsledky, jsem přešel na zpracování dat. Mikrofon byl naprogramován tak, aby měřil pouze po omezený čas. Z tohoto měřicího okna jsem získal stovky výsledků, ze kterých jsem odfiltroval hodnoty nad 700 Hz a pod 150 Hz, jelikož se jednalo o šum ze serva nebo okolního prostředí.
+
+Dále jsem z tohoto datového souboru vybral hodnoty, které si byly blízké jak v čase, tak v hodnotě, konkrétně v toleranci ±1 Hz. Aby bylo měření považováno za platné, muselo se takových hodnot vyskytovat alespoň pět. Tyto platné hodnoty jsem následně zprůměroval a Arduino tak za jedno měřicí okno vyhodnotilo jeden výsledný údaj frekvence. Ten byl porovnán s požadovanou hodnotou a jejich rozdíl byl přepočítán na absolutní hodnotu, která sloužila k výpočtu času dotahování struny. Všechny ostatní případy systém vyhodnotil jako nulové.
+
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:600px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/MIKROFON.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 4 – Test brnkání a odečítání frekvence
+    </p>
+</div>
+
+
+---
+
+###  Automatizované ladění a finální testy
+
+Následovalo přizpůsobení logiky pro automatizované ladění. Jelikož jsem pro brnkání používal kontinuální servo bez enkodéru, bylo nutné tomu uzpůsobit algoritmus. Servo z výchozí polohy Home krokovalo doprava. Jeden krok spočíval v otočení serva po dobu 300 ms, přičemž měřicí okno pro zaznamenávání frekvence se spustilo po 50 ms a trvalo 2 s od počátku otáčení serva. Tento časový posun sloužil k lepšímu potlačení šumu, který servo během pohybu emitovalo.
+
+Pokud se během měřicího okna nezaznamenala nenulová frekvence, servo pokračovalo dalším krokem stejným směrem. V opačném případě se otočil krokový motor příslušné struny, určené podle počítadla strun. Struna se tímto krokem částečně naladila, avšak nebylo známo, do jaké míry. Krokování pro doladění stejné struny proto muselo pokračovat. Krok následující po pohybu krokového motoru byl vždy proveden opačným směrem. Tento algoritmus se opakoval, dokud nebyla naměřena frekvence v toleranci ±1 Hz od požadované hodnoty.
+
+Jakmile došlo k naměření správné frekvence, následoval přesun na další strunu. Zde mohly nastat dvě situace. Pokud byl poslední krok proveden doprava, krokování pokračovalo stejným směrem, dokud nezazněla další struna. Pokud byl poslední krok proveden doleva, změnil se směr krokování a jedno nenulové měřicí okno bylo ignorováno.
+
+V momentě, kdy se počítadlo dostalo až na strunu A, přejelo servo třikrát z krajní do krajní polohy. Tím zazněly všechny struny a uživatel byl informován o ukončení ladicí sekvence. Poté se algoritmus přerušil a brnkací mechanismus setrval v poloze Home, tedy vlevo od struny G.
+
+Díky těmto úpravám se mi podařilo provést první úspěšný test, při kterém celý algoritmus proběhl bez chyby a zvládl naladit všechny struny. Celý proces, od rozladěného ukulele po kompletní doladění, trval přibližně dvě minuty. Objevovaly se však i chyby vedoucí k nenaměření frekvence. Tyto chyby se sice vyskytovaly poměrně zřídka, avšak v případě jejich výskytu narušily celý průběh algoritmu a bylo nutné jej restartovat. Jednalo se přesto o velmi důležitý test, který potvrdil funkčnost celého konceptu a umožnil jeho další rozvoj.
+
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:600px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/1_FUNKCNI.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 5 – První úspěšný test automatizovaného ladění
+    </p>
+</div>
+
+
+---
+
+###  Tělo a wifi modul
+
+
+</div>
+
+

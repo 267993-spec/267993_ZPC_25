@@ -1,0 +1,40 @@
+<style>
+  .modal-img {
+    cursor: zoom-in;
+    max-width: 250px; /* Zde nastavíš základní malou velikost */
+    transition: transform 0.3s;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .modal-img:hover { opacity: 0.8; }
+
+  /* Styl pro zvětšené okno (Lightbox) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+  }
+  .modal:target { display: flex; align-items: center; justify-content: center; }
+  .modal-content { max-width: 90%; max-height: 90%; }
+  .close-btn {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: white; font-size: 40px; font-weight: bold;
+    text-decoration: none;
+  }
+</style>
+
+<div style="text-align: center; margin: 20px 0;">
+  <a href="#{{ .Get "src" | urlize }}">
+    <img class="modal-img" src="{{ .Get "src" }}" alt="{{ .Get "caption" }}">
+  </a>
+  <p style="font-style: italic; font-size: 0.9em;">{{ .Get "caption" }}</p>
+</div>
+
+<div id="{{ .Get "src" | urlize }}" class="modal">
+  <a href="#!" class="close-btn">&times;</a>
+  <img class="modal-content" src="{{ .Get "src" }}">
+</div>
