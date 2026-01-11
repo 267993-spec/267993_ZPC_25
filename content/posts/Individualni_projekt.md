@@ -269,7 +269,7 @@ Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem p
 
 
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
-    <img src="/267993_ZPC_25/images/ukulelecele.png" 
+    <img src="/267993_ZPC_25/images/Ukulelecele.png" 
          class="img-previewl" 
          onclick="document.getElementById('popup3').style.display='flex'">
     
@@ -277,12 +277,12 @@ Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem p
 
   <div id="popup3" class="modal-overlay" onclick="this.style.display='none'">
         <span class="close-x">&times;</span>
-        <img src="/267993_ZPC_25/images/ukulelecele.png" class="modal-content">
+        <img src="/267993_ZPC_25/images/Ukulelecele.png" class="modal-content">
     </div>
 </div>
 
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
-    <img src="/267993_ZPC_25/images/ukulelemech.png" 
+    <img src="/267993_ZPC_25/images/Ukulelemech.png" 
          class="img-previewl" 
          onclick="document.getElementById('popup4').style.display='flex'">
     
@@ -290,12 +290,12 @@ Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem p
 
   <div id="popup4" class="modal-overlay" onclick="this.style.display='none'">
         <span class="close-x">&times;</span>
-        <img src="/267993_ZPC_25/images/ukulelemech.png" class="modal-content">
+        <img src="/267993_ZPC_25/images/Ukulelemech.png" class="modal-content">
     </div>
 </div>
 
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
-    <img src="/267993_ZPC_25/images/ukuleleout.png" 
+    <img src="/267993_ZPC_25/images/Ukuleleout.png" 
          class="img-previewl" 
          onclick="document.getElementById('popup5').style.display='flex'">
     
@@ -303,7 +303,7 @@ Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem p
 
   <div id="popup5" class="modal-overlay" onclick="this.style.display='none'">
         <span class="close-x">&times;</span>
-        <img src="/267993_ZPC_25/images/ukuleleout.png" class="modal-content">
+        <img src="/267993_ZPC_25/images/Ukuleleout.png" class="modal-content">
     </div>
 </div>
 
