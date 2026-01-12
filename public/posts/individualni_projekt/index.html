@@ -44,7 +44,7 @@ Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenáše
   <meta itemprop="description" content="Samoladící ukulele 1 Koncept Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je patrné z náčrtu níže, plánem je přesunout celý ladicí mechanismus do těla nástroje a tím zároveň skrýt celý systém samoladění, který bude zakrytý deskami vyřezanými na plotru. Do těla chci také umístit mechanismus pro automatizaci ladění. Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenášen přes převod na ozubený hřeben. Hrot přejede přes strunu a tím na ni brnkne. Piezo senzor umístěný v kobylce zaznamená vzniklou frekvenci, signál projde přes buffer do Arduina, které jej vyhodnotí a následně vyšle pokyn příslušnému krokovému motoru. Ten pak otočí ladicím mechanismem a napne konkrétní strunu tak, aby byla správně naladěná. Součástí projektu bude také výstup z Arduina na jack konektor.">
   <meta itemprop="datePublished" content="2025-09-22T20:24:11+02:00">
   <meta itemprop="dateModified" content="2025-09-22T20:24:11+02:00">
-  <meta itemprop="wordCount" content="1494">
+  <meta itemprop="wordCount" content="3683">
   <meta itemprop="keywords" content="Ukulele,Konstrukting">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -260,6 +260,20 @@ Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenáše
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
+        .img-previewm {
+        width: 200px;              /* Velikost náhledu */
+        border-radius: 12px;       /* ZAOBLENÉ ROHY */
+        cursor: pointer;
+        transition: 0.3s ease;
+        border: 1px solid #ddd;
+        display: block;
+        margin: 10px auto;
+    }
+    .img-previewm:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
     /* POP-UP OKNO (MODAL) */
     .modal-overlay {
         display: none;
@@ -290,6 +304,18 @@ Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenáše
         cursor: pointer;
         text-decoration: none;
     }
+
+    .img-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.arrow {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
 </style>
 <div style="text-align: justify;">
 <h2 id="1-koncept">1 Koncept</h2>
@@ -326,7 +352,7 @@ Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je
 </div>
 <hr>
 <h3 id="22-měření-frekvence-a-volba-senzorů">2.2 Měření frekvence a volba senzorů</h3>
-<p>Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem.</p>
+<p>Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem. Zároveň to také přidalo uživateli nezávislost na zesilovači a tak mohlo být ukulele využito pouze jako akustické.</p>
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
     <img src="/267993_ZPC_25/images/ELEZAPOJENI.jpg" 
          class="img-preview" 
@@ -338,7 +364,7 @@ Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je
     </div>
 </div>
 <hr>
-<h3 id="bezdrátové-ovládání-a-design-elektroniky">Bezdrátové ovládání a design elektroniky</h3>
+<h3 id="23-bezdrátové-ovládání-a-design-elektroniky">2.3 Bezdrátové ovládání a design elektroniky</h3>
 <p>Aby byl nástroj co nejvíce čistý („clean“) a bez zbytečných ovládacích prvků, rozhodl jsem se projekt rozšířit o Wi-Fi modul jako možné rozšíření. Díky tomu lze ladění ovládat bezdrátově, například prostřednictvím webového rozhraní nebo mobilní aplikace. Tím jsem se vyhnul nutnosti použití fyzických tlačítek a displejů, které by narušovaly vzhled nástroje. Zároveň jsem se rozhodl propojit pouze komunikaci z wifi modulu do arduina, jelikož jsem odezvu nástroje nepotřeboval.</p>
 <p>Níže vidíme nákres celého projektu navržený v prostředí KiCad. Srdcem systému je kombinace mikrokontrolerů Arduino UNO a Wemos D1 mini, což umožňuje propojení klasického řízení s Wi-Fi konektivitou. K efektivnímu využití pinů jsou použity dva I/O expandéry PCF8574AP na I2C sběrnici , které skrze čtveřici řídících jednotek ULN2003 ovládají čtyři krokové motory a jeden servo motor. Součástí schématu je také mikrofon MAX4466 a integrovaný napájecí management s regulátorem LM2596 , který zajišťuje stabilních 5V ze vstupního 12V zdroje.</p>
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
@@ -414,7 +440,7 @@ Cílem projektu je vyrobit prototyp samoladícího elektrického ukulele. Jak je
     }
 </style>
 <hr>
-<h3 id="mechanická-konstrukce-a-první-prototyp">Mechanická konstrukce a první prototyp</h3>
+<h3 id="24-mechanická-konstrukce-a-první-prototyp">2.4 Mechanická konstrukce a první prototyp</h3>
 <p>Dalším krokem byl návrh mechanické části ukulele. Ve 3D CADu jsem vymodeloval první prototyp těla i krku, abych otestoval vůle, usazení motorů, převodů a senzorů. Model jsem vytiskl na 3D tiskárně a všechny díly zkušebně sestavil. Test potvrdil, že většina rozměrů i uložení dílů je správná, což mi umožnilo pokračovat k prvnímu kompletnímu prototypu.</p>
 <p>Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem proto k druhé iteraci, ve které jsem přemodeloval celé tělo. Změnil jsem úhel napojení krku o 15° vůči horní ploše těla, čímž se podařilo tento problém eliminovat. Další úpravou byla výměna piezo senzorů přilepených pod deskou těla za piezo senzor umístěný přímo pod kobylkou, což výrazně ušetřilo místo.</p>
 <p><model-viewer 
@@ -466,7 +492,7 @@ overflow: hidden;
     </div>
 </div>
 <hr>
-<h3 id="iterace-konstrukce-a-testování-hry">Iterace konstrukce a testování hry</h3>
+<h3 id="25-iterace-konstrukce-a-testování-hry">2.5 Iterace konstrukce a testování hry</h3>
 <p>Do stavu funkčního prototypu z hlediska samotného hraní jsem se dostal po dalších dvou iteracích, přičemž třetí verze již umožňovala testování hry. Do těla jsem nainstaloval ladicí kolíky, které jsem zaaretoval šrouby. Ty sloužily jak k upevnění ozubených kol na ladicí kolíky, tak k vyvození tření předepnutím, aby nedocházelo k samovolnému povolování strun.</p>
 <p>Ukulele jsem ručně naladil a otestoval jeho základní funkčnost. Jak je vidět i slyšet na videu níže, nástroj hraje poměrně čistě a překvapivě se mi na něj hrálo velmi dobře. Je však patrné, že ukulele je poměrně tiché, což jsem předpokládal, a proto jsem přidal piezo senzor pod kobylku.</p>
 <div style="text-align: center; margin: 15px 0;">
@@ -480,7 +506,7 @@ overflow: hidden;
     </p>
 </div>
 <hr>
-<h3 id="napínání-strun-a-ladicí-mechanismus">Napínání strun a ladicí mechanismus</h3>
+<h3 id="26-napínání-strun-a-ladicí-mechanismus">2.6 Napínání strun a ladicí mechanismus</h3>
 <p>Další testování se zaměřilo na samotné napínání strun. Ukázalo se, že pro dosažení správné frekvence je zapotřebí poměrně velký utahovací moment. Původně jsem používal motory typu BYJ-48 5V, které jsem dále převodoval ozubenými koly v poměru 2:1. Tato konfigurace však nebyla dostatečná ani pro napnutí struny A, natož struny E, která je z hlediska potřebného momentu nejnáročnější.</p>
 <p>Postupně jsem proto iteroval převodový poměr a zakoupil silnější motory BYJ-48 s napětím 12V. Po pěti dalších iteracích se mi podařilo dosáhnout dostatečného momentu i pro strunu E. Finální konfigurace tedy byla motor BYJ-48 12V s převodem 6:1.</p>
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
@@ -494,7 +520,7 @@ overflow: hidden;
     </div>
 </div>
 <hr>
-<h3 id="brnkací-mechanismus">Brnkací mechanismus</h3>
+<h3 id="27-brnkací-mechanismus">2.7 Brnkací mechanismus</h3>
 <p>Testování brnkacího mechanismu přineslo další výzvy. Původně jsem plánoval použití klasického serva s rozsahem 180°, avšak tento rozsah nebyl dostatečný. Kvůli převodu z pastorku na hřeben jsem potřeboval lineární rozsah přibližně 60 mm, což by vyžadovalo příliš velký pastorek. Z tohoto důvodu jsem zvolil kontinuální servo, které bylo nutné ovládat odlišným způsobem.</p>
 <p>Samotný brnkací mechanismus vyžadoval další čtyři iterace, během nichž jsem ladil parametry trsátka, aby bylo dosaženo dostatečně hlasitého zvuku. Dalším problémem byla změna vzdálenosti strun od těla při jejich napínání. Tento problém jsem vyřešil seřízením krku pomocí šroubu před samotným laděním.</p>
 <div style="text-align: center; margin: 15px 0;">
@@ -508,7 +534,7 @@ overflow: hidden;
     </p>
 </div>
 <hr>
-<h3 id="software-a-algoritmus-ladění">Software a algoritmus ladění</h3>
+<h3 id="28-software-a-algoritmus-ladění">2.8 Software a algoritmus ladění</h3>
 <p>Po úspěšném otestování mechaniky následovalo propojení hardwaru se softwarem. Největší výzvou bylo spolehlivé rozpoznání frekvence struny. Kvůli omezené dynamické paměti Arduina bylo obtížné získat korektní výsledky. Použil jsem mikrofon MAX4466 umístěný v blízkosti brnkacího mechanismu. Signál byl zpracováván pomocí rychlé Fourierovy transformace (FFT), ze které byla určena frekvence.</p>
 <p>Poté, co mi začaly vycházet rozumné výsledky, jsem přešel na zpracování dat. Mikrofon byl naprogramován tak, aby měřil pouze po omezený čas. Z tohoto měřicího okna jsem získal stovky výsledků, ze kterých jsem odfiltroval hodnoty nad 700 Hz a pod 150 Hz, jelikož se jednalo o šum ze serva nebo okolního prostředí.</p>
 <p>Dále jsem z tohoto datového souboru vybral hodnoty, které si byly blízké jak v čase, tak v hodnotě, konkrétně v toleranci ±1 Hz. Aby bylo měření považováno za platné, muselo se takových hodnot vyskytovat alespoň pět. Tyto platné hodnoty jsem následně zprůměroval a Arduino tak za jedno měřicí okno vyhodnotilo jeden výsledný údaj frekvence. Ten byl porovnán s požadovanou hodnotou a jejich rozdíl byl přepočítán na absolutní hodnotu, která sloužila k výpočtu času dotahování struny. Všechny ostatní případy systém vyhodnotil jako nulové.</p>
@@ -523,7 +549,7 @@ overflow: hidden;
     </p>
 </div>
 <hr>
-<h3 id="automatizované-ladění-a-finální-testy">Automatizované ladění a finální testy</h3>
+<h3 id="29-automatizované-ladění-a-finální-testy">2.9 Automatizované ladění a finální testy</h3>
 <p>Následovalo přizpůsobení logiky pro automatizované ladění. Jelikož jsem pro brnkání používal kontinuální servo bez enkodéru, bylo nutné tomu uzpůsobit algoritmus. Servo z výchozí polohy Home krokovalo doprava. Jeden krok spočíval v otočení serva po dobu 300 ms, přičemž měřicí okno pro zaznamenávání frekvence se spustilo po 50 ms a trvalo 2 s od počátku otáčení serva. Tento časový posun sloužil k lepšímu potlačení šumu, který servo během pohybu emitovalo.</p>
 <p>Pokud se během měřicího okna nezaznamenala nenulová frekvence, servo pokračovalo dalším krokem stejným směrem. V opačném případě se otočil krokový motor příslušné struny, určené podle počítadla strun. Struna se tímto krokem částečně naladila, avšak nebylo známo, do jaké míry. Krokování pro doladění stejné struny proto muselo pokračovat. Krok následující po pohybu krokového motoru byl vždy proveden opačným směrem. Tento algoritmus se opakoval, dokud nebyla naměřena frekvence v toleranci ±1 Hz od požadované hodnoty.</p>
 <p>Jakmile došlo k naměření správné frekvence, následoval přesun na další strunu. Zde mohly nastat dvě situace. Pokud byl poslední krok proveden doprava, krokování pokračovalo stejným směrem, dokud nezazněla další struna. Pokud byl poslední krok proveden doleva, změnil se směr krokování a jedno nenulové měřicí okno bylo ignorováno.</p>
@@ -540,7 +566,946 @@ overflow: hidden;
     </p>
 </div>
 <hr>
-<h3 id="tělo-a-wifi-modul">Tělo a wifi modul</h3>
+<h3 id="210-tělo-a-wifi-modul">2.10 Tělo a wifi modul</h3>
+<p>Pro zakrytování těla jsem se rozhodl vymodelovat typický tvar ukulele, rozměrově přizpůsobený tak, aby se do něj vešla elektronika i nosná část. Jako vrchní desku jsem zvolil plexisklo, do kterého jsem vygravíroval technické symboly a značení, jež slouží jako designérské prvky. Pro jejich zvýraznění jsem spáry vzniklé gravírováním vybarvil temperovou barvou.</p>
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+  <div class="img-row">
+    <img src="/267993_ZPC_25/images/DESKA0.jpg"
+         class="img-preview"
+         onclick="document.getElementById('popup6a').style.display='flex'">
+<p><span class="arrow">→</span></p>
+<p><img src="/267993_ZPC_25/images/DESKA1.jpg"
+class="img-preview"
+onclick="document.getElementById('popup6b').style.display='flex'"></p>
+  </div>
+  <p style="font-style: italic; font-size: 0.9rem;">
+    Obr. 8: Úprava desky těla
+  </p>
+  <!-- Popup levý obrázek -->
+  <div id="popup6a" class="modal-overlay" onclick="this.style.display='none'">
+    <span class="close-x">&times;</span>
+    <img src="/267993_ZPC_25/images/DESKA0.jpg" class="modal-content">
+  </div>
+  <!-- Popup pravý obrázek -->
+  <div id="popup6b" class="modal-overlay" onclick="this.style.display='none'">
+    <span class="close-x">&times;</span>
+    <img src="/267993_ZPC_25/images/DESKA1.jpg" class="modal-content">
+  </div>
+</div>
+<p>Uživatelské rozhraní jsem navrhl tak, aby bylo co nejjednodušší a nejintuitivnější. Přidal jsem tři tlačítka pro ovládání automatizovaného ladění. Kalibrační tlačítko pouze projede brnkacím mechanismem z krajní do krajní polohy, aby bylo zajištěno, že jsou struny dostatečně napnuté pro automatické ladění. Druhé tlačítko spouští ladicí algoritmus po jednosekundové prodlevě a třetí jej zastavuje.</p>
+<p>Dále jsem přidal funkce pro manuální utahování a povolování krokových motorů. Proces připojení k modulu spočívá pouze v zadání hesla v nastavení Wi-Fi telefonu a následném zadání IP adresy modulu do webového prohlížeče. Tento postup je tak funkční na všech zařízeních, která jsou schopna se připojit k internetu.</p>
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/APP.png" 
+         class="img-previewm" 
+         onclick="document.getElementById('popup7').style.display='flex'">
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 9: UI aplikace pro ovládání ELEUKO</p>
+  <div id="popup7" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/APP.png" class="modal-content">
+    </div>
+</div>
+<p>Po zabudování funkční části do krytu těla bylo nutné provést finální testování všech funkcí a doladit parametry s ohledem na změněné rezonanční frekvence, které vznikly úpravou celé konstrukce. Kód byl upraven s ohledem na horší detekci struny G, u níž docházelo přibližně v jednom z deseti případů k chybnému měření, což bylo pro ladicí algoritmus považováno za poměrně uspokojivý výsledek.</p>
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:600px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/CELEK.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 6 – Ukázka funkcionalit jednotlivých funkcí
+    </p>
+</div>
+<h2 id="3-možná-vylepšení">3 Možná vylepšení</h2>
+<p>Po dokončení projektu následovala sebereflexe. Největším nedostatkem projektu byl omezený prostor a výpočetní limity použitého řešení. Pro stabilnější chod a lepší výsledky bych ve druhé verzi prototypu použil modul ESP32, který nabízí vyšší výpočetní výkon a zároveň úsporu místa, jelikož je menší a eliminuje potřebu samostatného Wi-Fi modulu. Dále by bylo vhodné lépe vyztužit spojení vnitřního těla s krkem nástroje, zlepšit jeho akustické vlastnosti a současně upravit ergonomii pro pohodlnější držení krku.</p>
+<h2 id="4-přílohy">4 Přílohy</h2>
+<h3 id="kód-arduina">Kód Arduina</h3>
+<div style="max-width: 800px; margin: 2rem auto; text-align:left;">
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+  <style>
+  .code-window {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    font-family: 'Fira Code', monospace;
+  }
+  .code-header {
+    background: #2d2d2d;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+  .code-content { padding: 1rem; overflow-x: auto; }
+  </style>
+  
+  <div class="code-window">
+    <div class="code-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span style="color:#ccc; margin-left:10px;">ARDUINO.ino</span>
+    </div>
+    <div class="code-content">
+      <pre><code class="language-cpp">#include "arduinoFFT.h"
+  #include <Servo.h>
+  #include <Wire.h>
+  #include <PCF8574.h>
+  
+  
+  
+  Servo brnkServo;
+  
+  #define SERVO_PIN 10
+  #define SERVO_LEFT 65
+  #define SERVO_RIGHT 122
+  #define SERVO_STOP 90
+  
+  int direction = 1; // 1 = doprava, -1 = doleva (pro brnkací servo)
+  bool lastDirectionRight = true;
+  bool ignoreOnePluck = false;
+  bool stringJustFinished = false;
+  bool allStringsCompleted = false;
+  
+  bool tuningEnabled = false;
+  bool tuningFinished = false;
+  bool programRunning = false;
+  bool manualMode = false;
+  
+  bool waitForIgnoredPluck = false;
+  
+  int noFreqCountString0 = 0;
+  
+  
+  #define SAMPLES 128
+  #define SAMPLING_FREQUENCY 2000 // Hz
+  
+  
+  arduinoFFT FFT;
+  double vReal[SAMPLES];
+  double vImag[SAMPLES];
+  
+  unsigned long microseconds;
+  unsigned int sampling_period_us;
+  
+  // Ukulele frekvence
+  double targetFreq[4] = {396.6, 266.6, 335.0, 447.0}; // 0=A, 1=C, 2=E, 3=G
+  int currentString = 0;
+  
+  // --- POZOR: deklarace PCF8574 přesunuta sem (před setup) ---
+  PCF8574 pcf1(0x20);
+  PCF8574 pcf2(0x21);
+  
+  #define MANUAL_RUN_TIME 30000UL   // 30 sekund
+  
+  
+  void setup() {
+      Serial.begin(9600);
+      brnkServo.attach(SERVO_PIN);
+      brnkServo.write(SERVO_STOP);
+  
+      sampling_period_us = round(1000000 * (1.0 / SAMPLING_FREQUENCY));
+  
+      Wire.begin();
+      delay(50);
+      pcf1.begin();
+      pcf2.begin();
+  
+      
+      for (int i = 0; i < 8; i++) {
+          pcf1.write(i, LOW);
+          pcf2.write(i, LOW);
+      }
+  
+      Serial.println("Setup hotovo.");
+  }
+  
+  void loop() {
+  
+  
+        if (Serial.available()) {
+          char c = Serial.read();
+  
+          // ---------- STOP ----------
+          if (c == 'X') {
+              programRunning = false;
+              manualMode = false;
+              ResetState();
+              return;
+          }
+  
+          // ---------- MANUÁLNÍ PŘÍKAZ ----------
+          if (c == 'g' || c == 'c' || c == 'e' || c == 'a') {
+  
+              char dirChar = '\0';
+  
+              // počkej maximálně 100 ms na druhý znak (+ nebo -)
+              unsigned long start = millis();
+              while (!Serial.available() && (millis() - start < 100));
+              if (Serial.available()) dirChar = Serial.read();
+              else dirChar = '+'; // default, pokud nic nepřišlo
+  
+              ManualStep(c, dirChar);
+              return;
+          }
+  
+          // ---------- AUTOMAT ----------
+          switch (c) {
+              case 'K':
+                  Home();
+                  break;
+  
+              case 'S':
+                  manualMode = false;
+                  programRunning = true;
+                  break;
+          }
+      }
+  
+  
+      if (manualMode) {
+      brnkServo.write(SERVO_STOP);
+      return;
+      }
+  
+  
+    
+      if (!programRunning) {
+          brnkServo.write(SERVO_STOP);
+          return;
+      }
+  
+      if (tuningFinished) {
+          brnkServo.write(SERVO_STOP);  // jistota
+          return;                       // loop už nic nedělá
+      }
+  
+  
+      static bool startWaitDone = false;
+  
+      if (!startWaitDone) {
+  
+          delay(500);
+  
+          startWaitDone = true;
+  
+      }
+      // --- 1) SERVO UDĚLÁ KROK ---
+      if (direction == 1) StepRight();
+      else StepLeft();
+  
+      // --- 2) MIKROFON ZAČNE MĚŘIT DŘÍVE ---
+      delay(10); // místo 50 → zachytí začátek tónu
+  
+      // --- 3) 2s měření ---
+      double freq = MeasureForSeconds(2);
+      Serial.print("Naměřeno: ");
+      Serial.println(freq);
+  
+      
+  
+  
+      brnkServo.write(SERVO_STOP);
+      delay(500);
+  
+      if (ignoreOnePluck && freq > 0) {
+      Serial.println("Ignoruji jedno brnknutí");
+  
+      ignoreOnePluck = false;
+      waitForIgnoredPluck = false;   // ⬅️ ignorace hotová
+      freq = 0;
+  
+      // TEĎ už smíme přejít na další strunu
+      NextString();
+      }
+  
+  
+      if (freq != 0) {
+          direction *= -1;
+          lastDirectionRight = (direction == -1);
+      }
+  
+      // --- 5) LADĚNÍ AKTUÁLNÍ STRUNY ---
+      TuneCurrentString(freq);
+  
+      if (stringJustFinished) {
+  
+      // pokud poslední krok byl doprava → jdeme rovnou dál
+      if (lastDirectionRight) {
+          NextString();
+      }
+      // pokud byl vlevo → čekáme na ignorované brnknutí
+      // (NextString() se zavolá až po ignoraci)
+  
+      stringJustFinished = false;
+      }
+  
+  
+      if (currentString == 0 && allStringsCompleted) {
+          GoHome();
+      }
+  
+      
+  }
+  
+  // --------------------- FFT + ODSTRANĚNÍ ŠUMU ---------------------
+  #define BUFFER_SIZE 20
+  double freqBuffer[BUFFER_SIZE];
+  int bufferIndex = 0;
+  
+  void AddFrequency(double f) {
+      if (f < 220 || f > 600) return; // širší okno
+      freqBuffer[bufferIndex] = f;
+      bufferIndex = (bufferIndex + 1) % BUFFER_SIZE;
+  }
+  
+  
+  double ProcessFrequencies() {
+      double sum = 0;
+      int count = 0;
+      double firstMeasuredFreq = 0;
+  
+  
+      double minFreq = 1e6; // pro kontrolu rozptýlení
+      double maxFreq = 0;
+      double target = targetFreq[currentString];
+  
+      for (int i = 0; i < BUFFER_SIZE; i++) {
+          double f = freqBuffer[i];
+          if (f <= 0) continue;
+  
+          if (firstMeasuredFreq == 0) firstMeasuredFreq = f;
+  
+          if (abs(f - target) <= 30) {
+              Serial.print("OK: ");
+              Serial.println(f);
+  
+              sum += f;
+              count++;
+              
+  
+              if (f < minFreq) minFreq = f;
+              if (f > maxFreq) maxFreq = f;
+          }
+          
+      }
+      Serial.println(firstMeasuredFreq);
+  
+      // ⬇⬇⬇ rozdílný minimální počet vzorků podle struny ⬇⬇⬇
+      int minSamples = (currentString == 1 || currentString == 2) ? 3 : 2;
+  
+      if (count > 1 && (maxFreq - minFreq > 40)) {
+          
+          return 0;
+      }
+  
+      if (currentString == 0 && count < minSamples && firstMeasuredFreq > 0) {
+          if (abs(firstMeasuredFreq - target) <= 20) {
+              return firstMeasuredFreq;
+          } else {
+              return 0; // nedá se použít
+          }
+      }
+  
+  
+  
+      if (count < minSamples) return 0;
+  
+      Serial.print("Použito vzorků: ");
+      Serial.println(count);
+  
+      return sum / count;
+  }
+  
+  
+  
+  
+  double FindDominantFrequency() {
+      
+      
+      for (int i = 0; i < SAMPLES; i++) {
+          microseconds = micros();
+          vReal[i] = analogRead(2);
+          vImag[i] = 0;
+          while (micros() < (microseconds + sampling_period_us));
+      }
+  
+      double mean = 0;
+      for (int i = 0; i < SAMPLES; i++) mean += vReal[i];
+      mean /= SAMPLES;
+      for (int i = 0; i < SAMPLES; i++) vReal[i] -= mean;
+  
+      double level = 0;
+      for (int i = 0; i < SAMPLES; i++) level += abs(vReal[i]);
+      level /= SAMPLES;
+  
+      if (level < 1) return 0;
+  
+      FFT.Windowing(vReal, SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
+      FFT.Compute(vReal, vImag, SAMPLES, FFT_FORWARD);
+      FFT.ComplexToMagnitude(vReal, vImag, SAMPLES);
+  
+      double peak = FFT.MajorPeak(vReal, SAMPLES, SAMPLING_FREQUENCY);
+      if (peak < 30) return 0;
+  
+      return peak;
+  
+  }
+  
+  // --------------------- LADĚNÍ STRUN ---------------------
+  void TuneCurrentString(double freq) {
+  
+      if (freq == 0) {
+  
+          return;
+      }
+  
+      double target = targetFreq[currentString];
+      double lowLimit = target - 0.5;
+      double highLimit = target + 0.5;
+  
+  
+      if (freq < lowLimit) {
+          AdjustString(currentString, target, freq);
+      } else if (freq > highLimit) {
+          AdjustString(currentString, target, freq);
+      } else {
+          delay(800);
+  
+          stringJustFinished = true;
+  
+          if (!lastDirectionRight) {
+              // poslední krok byl vlevo → musíme jedno brnknutí ignorovat
+              ignoreOnePluck = true;
+              waitForIgnoredPluck = true;
+          }
+  
+          if (lastDirectionRight) direction = 1;
+          else direction = 1;
+  
+          stringJustFinished = true;
+  
+          return;
+      }
+  }
+  
+  
+  void StepRight() {
+      brnkServo.write(SERVO_RIGHT);
+      delay(200);
+      brnkServo.write(SERVO_STOP);
+  }
+  
+  void StepLeft() {
+      brnkServo.write(SERVO_LEFT);
+      delay(200);
+      brnkServo.write(SERVO_STOP);
+  }
+  
+  void GoHome() {
+      brnkServo.write(1);
+      delay(1000);
+      brnkServo.write(SERVO_STOP);
+      delay(100);
+      brnkServo.write(180);
+      delay(1000);
+      brnkServo.write(1);
+      delay(1000);
+      brnkServo.write(SERVO_STOP);
+      delay(100);
+      brnkServo.write(180);
+      delay(1000);
+      brnkServo.write(1);
+      delay(1000);
+  }
+  
+  double MeasureForSeconds(float sec) {
+      unsigned long tEnd = millis() + (unsigned long)(sec * 1000.0);
+      for (int i = 0; i < BUFFER_SIZE; i++) freqBuffer[i] = 0;
+  
+      while (millis() < tEnd) {
+  
+          double f = FindDominantFrequency();
+  
+          if (f > 220) {   // jen smysluplné hodnoty
+              Serial.print("FFT: ");
+              Serial.println(f);
+          }
+  
+          AddFrequency(f);
+      }
+      return ProcessFrequencies();
+  }
+  
+  // -----------------------------------------------------------
+  // MAPOVÁNÍ STRUN NA KROKOVÉ MOTORY
+  // -----------------------------------------------------------
+  const int stepSeq[8][4] = {
+      {1, 0, 0, 1}, {1, 0, 0, 0}, {1, 1, 0, 0}, {0, 1, 0, 0},
+      {0, 1, 1, 0}, {0, 0, 1, 0}, {0, 0, 1, 1}, {0, 0, 0, 1}
+  };
+  
+  void stepMotor(PCF8574 &pcf, int basePin, int stepIndex) {
+      for (int i = 0; i < 4; i++) {
+          pcf.write(basePin + i, stepSeq[stepIndex][i]);
+      }
+  }
+  
+  void stopMotor(PCF8574 &pcf, int basePin) {
+      for (int i = 0; i < 4; i++) pcf.write(basePin + i, LOW);
+  }
+  
+  void runStepper(PCF8574 &pcf, int basePin, unsigned long duration, int stepDir) {
+      unsigned long start = millis();
+  
+      while (millis() - start < duration) {
+  
+          // ⬅⬅⬅ TOTO JE KLÍČ
+          if (Serial.available()) {
+              char c = Serial.read();
+              if (c == 'X') {
+                  programRunning = false;
+                  stopMotor(pcf, basePin);
+                  ResetState();
+                  return;
+              }
+          }
+  
+          if (!programRunning && !manualMode) {
+              stopMotor(pcf, basePin);
+              return;
+          }
+  
+          for (int s = 0; s < 8; s++) {
+  
+              if (Serial.available()) {
+                  char c = Serial.read();
+                  if (c == 'X') {
+                      programRunning = false;
+                      stopMotor(pcf, basePin);
+                      ResetState();
+                      return;
+                  }
+              }
+  
+              if (!programRunning && !manualMode) {
+              stopMotor(pcf, basePin);
+              return;
+              }
+  
+              stepMotor(pcf, basePin, stepDir > 0 ? s : 7 - s);
+              delay(5);
+          }
+      }
+  
+      stopMotor(pcf, basePin);
+  }
+  
+  
+  
+  // -----------------------------------------------------------
+  // VÝBĚR MOTORU PODLE STRUNY
+  // -----------------------------------------------------------
+  void getMotorForString(int stringIndex, PCF8574* &pcf, int &basePin) {
+      switch (stringIndex) {
+          case 0: pcf = &pcf1; basePin = 4; break; // G
+          case 1: pcf = &pcf2; basePin = 0; break; // C
+          case 2: pcf = &pcf1; basePin = 0; break; // E
+          case 3: pcf = &pcf2; basePin = 4; break; // A
+      }
+  }
+  
+  // -----------------------------------------------------------
+  // AUTOMATICKÁ ÚPRAVA LADĚNÍ
+  // -----------------------------------------------------------
+  #define MS_PER_HZ 300
+  
+  void AdjustString(int stringIndex, double target, double measured) {
+      double diff = target - measured;
+  
+      PCF8574* pcf;
+      int basePin = 0;
+      getMotorForString(stringIndex, pcf, basePin);
+  
+      int stepDir;
+      unsigned long duration;
+  
+      if (diff > 0) stepDir = 1; // utáhnout
+      else { stepDir = -1; diff = -diff; } // povolit
+  
+      if (stringIndex == 0) stepDir = -stepDir; // invert pro G
+      if (stringIndex == 1) stepDir = -stepDir;
+  
+      duration = (unsigned long)(diff * MS_PER_HZ);
+  
+      // ===== ZMĚNA: minimální doba, aby motor opravdu jelo =====
+      if (duration < 50) duration = 50; // aspoň pár kroků
+  
+      Serial.print("Úprava struny "); Serial.print(stringIndex);
+      Serial.print(" o "); Serial.print(diff); Serial.print(" Hz, čas: ");
+      Serial.println(duration);
+      Serial.print("Krokový směr: "); Serial.println(stepDir);
+  
+      runStepper(*pcf, basePin, duration, stepDir); // jen tato funkce
+  }
+  
+  
+  // -----------------------------------------------------------
+  // IMPLEMENTACE NextString
+  // -----------------------------------------------------------
+  void NextString() {
+      ignoreOnePluck = false;   // jistota – reset
+  
+      direction = 1;            // vždy start doprava
+  
+      for (int i = 0; i < BUFFER_SIZE; i++) freqBuffer[i] = 0;
+      delay(200);
+  
+      currentString++;
+      if (currentString > 3) {
+          currentString = 0;
+          allStringsCompleted = true;
+          tuningFinished = true;
+      }
+  }
+  
+  
+  void Home() {
+      brnkServo.write(SERVO_RIGHT);
+      delay(2000);
+      brnkServo.write(SERVO_LEFT);
+      delay(2000);
+      brnkServo.write(SERVO_STOP);
+      delay(2000);
+  }
+  
+  void ResetState() {
+  
+      // SERVO
+      brnkServo.write(SERVO_STOP);
+  
+      // Vypni všechny krokáče
+      stopMotor(pcf1, 0);
+      stopMotor(pcf1, 4);
+      stopMotor(pcf2, 0);
+      stopMotor(pcf2, 4);
+  
+      // Reset proměnných
+      direction = 1;
+      lastDirectionRight = true;
+      ignoreOnePluck = false;
+      stringJustFinished = false;
+      allStringsCompleted = false;
+      tuningFinished = false;
+      currentString = 0;
+  
+      for (int i = 0; i < BUFFER_SIZE; i++) freqBuffer[i] = 0;
+  
+      Home();  // návrat serva
+  }
+  void runStepperManual(PCF8574 &pcf, int basePin, int stepDir, int steps = 100) {
+      for (int i = 0; i < steps; i++) {
+  
+          // --- kontrola STOP přes Serial ---
+          if (Serial.available()) {
+              char c = Serial.read();
+              if (c == 'X') {
+                  stopMotor(pcf, basePin);
+                      // Vypni všechny krokáče
+                  stopMotor(pcf1, 0);
+                  stopMotor(pcf1, 4);
+                  stopMotor(pcf2, 0);
+                  stopMotor(pcf2, 4);
+                  currentString = 0;
+                  return;
+              }
+          }
+  
+          // --- vykonání kroků ---
+          for (int s = 0; s < 8; s++) {
+              stepMotor(pcf, basePin, stepDir > 0 ? s : 7 - s);
+              delay(5); // rychlost kroku
+          }
+      }
+  
+      stopMotor(pcf, basePin);
+  }
+  
+  
+  void ManualStep(char stringChar, char dirChar) {
+  
+      int stringIndex;
+  
+      switch (stringChar) {
+          case 'g': stringIndex = 0; break;
+          case 'c': stringIndex = 1; break;
+          case 'e': stringIndex = 2; break;
+          case 'a': stringIndex = 3; break;
+          default: return;
+      }
+  
+      // správně rozeznat + a -
+      int stepDir;
+      if (dirChar == '-') stepDir = -1;
+      else stepDir = 1; // + nebo default
+  
+      // inverze pro fyzické zapojení
+      if (stringIndex == 0 || stringIndex == 1) stepDir = -stepDir;
+  
+      PCF8574* pcf;
+      int basePin;
+      getMotorForString(stringIndex, pcf, basePin);
+  
+      Serial.print("MANUAL ");
+      Serial.print(stringChar);
+      Serial.print(dirChar);
+      Serial.print(" | směr: ");
+      Serial.println(stepDir);
+  
+      runStepperManual(*pcf, basePin, stepDir, MANUAL_RUN_TIME); // 200 kroků, uprav dle potřeby
+  
+  }
+  
+  
+  
+  
+  </code></pre>
+    </div>
+  </div>
+
+</div>
+<h3 id="kód-wifi-modulu">Kód Wifi modulu</h3>
+<div style="max-width: 800px; margin: 2rem auto; text-align:left;">
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+  <style>
+  .code-window {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    font-family: 'Fira Code', monospace;
+  }
+  .code-header {
+    background: #2d2d2d;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+  .code-content { padding: 1rem; overflow-x: auto; }
+  </style>
+  
+  <div class="code-window">
+    <div class="code-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span style="color:#ccc; margin-left:10px;">WIFI.ino</span>
+    </div>
+    <div class="code-content">
+      <pre><code class="language-cpp">#include <ESP8266WiFi.h>
+  #include <ESP8266WebServer.h>
+  
+  ESP8266WebServer server(80);
+  
+  String webpage = R"=====(
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      text-align: center;
+      background: #f5f5f7;
+      margin: 0;
+      padding: 20px;
+  }
+  .button {
+      padding: 18px 30px;
+      margin: 15px;
+      border-radius: 14px;
+      font-size: 20px;
+      border: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      cursor: pointer;
+  }
+  .blue { background:#007aff; color:white; }
+  .green { background:#34c759; color:white; }
+  .red { background:#ff3b30; color:white; }
+  .circle {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      background:#d1d1d6;
+      margin: 10px;
+      cursor:pointer;
+  }
+  .string-text {
+      font-size: 48px;
+      margin: 20px;
+  }
+  .data {
+      background:white;
+      padding:20px;
+      border-radius:16px;
+      margin-top:20px;
+      font-family: monospace;
+  }
+  .strings-manual {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+  }
+  .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .stop {
+      margin-top: 20px;
+      background: #ff3b30;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      border-radius: 20px;
+      cursor: pointer;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Auto Ukulele Tuner</h2>
+  
+  <!-- Původní tlačítka -->
+  <button class="button blue" onclick="sendCmd('K')">Calibration</button><br>
+  <button class="button green" onclick="sendCmd('S')">Start Tuning</button><br>
+  
+  <!-- Přejmenovaný červený STOP na Stop Tuning -->
+  <button class="button red" onclick="sendCmd('X')">Stop Tuning</button>
+  
+  <!-- NOVÁ TLAČÍTKA PRO MANUÁLNÍ KROKOVÉ MOTORY -->
+  <h2>Manual Stepper Control</h2>
+  <div class="strings-manual">
+    <div class="col">
+      <div class="circle" onclick="sendManual('g','+')">+</div>
+      <div class="string-text">G</div>
+      <div class="circle" onclick="sendManual('g','-')">-</div>
+    </div>
+    <div class="col">
+      <div class="circle" onclick="sendManual('c','+')">+</div>
+      <div class="string-text">C</div>
+      <div class="circle" onclick="sendManual('c','-')">-</div>
+    </div>
+    <div class="col">
+      <div class="circle" onclick="sendManual('e','+')">+</div>
+      <div class="string-text">E</div>
+      <div class="circle" onclick="sendManual('e','-')">-</div>
+    </div>
+    <div class="col">
+      <div class="circle" onclick="sendManual('a','+')">+</div>
+      <div class="string-text">A</div>
+      <div class="circle" onclick="sendManual('a','-')">-</div>
+    </div>
+  </div>
+  
+  <!-- STOP tlačítko pro manuální krokové motory -->
+  <div class="stop" onclick="sendStopper()">STOP</div>
+  
+  <div id="data" class="data">No data yet…</div>
+  
+  <script>
+  function sendCmd(cmd){
+      fetch("/cmd?c=" + cmd);
+  }
+  
+  // Odeslání manuálního kroku do Arduina
+  function sendManual(s, d){
+      fetch("/cmd?s=" + s + "&d=" + d);
+  }
+  
+  // STOP tlačítko pro manuální krokové motory
+  function sendStopper(){
+      fetch("/cmd?x=1");
+  }
+  
+  setInterval(()=>{
+    fetch("/log").then(r=>r.text())
+    .then(t=> document.getElementById("data").innerText = t);
+  }, 300);
+  </script>
+  
+  </body>
+  </html>
+  )=====";
+  
+  String lastLog = "Ready";
+  
+  void setup() {
+    Serial.begin(9600);
+  
+    WiFi.softAP("Ukulele_Tuner", "12345678");
+  
+    server.on("/", [](){
+      server.send(200, "text/html", webpage);
+    });
+  
+    server.on("/cmd", [](){
+      if (server.hasArg("x")) {        // STOP manuální
+        Serial.write('X');
+        lastLog = "STOP";
+      }
+      else if (server.hasArg("s") && server.hasArg("d")) { // manuální krok
+        char s = server.arg("s")[0]; // g c e a
+        char d = server.arg("d")[0]; // + -
+        Serial.write(s);
+        Serial.write(d);
+        lastLog = String("Sent: ") + s + d;
+      }
+      else if (server.hasArg("c")) {  // původní tlačítka
+        char c = server.arg("c")[0];
+        Serial.write(c);
+        lastLog = String("Sent: ") + c;
+      }
+      server.send(200, "text/plain", "OK");
+    });
+  
+    server.on("/log", [](){
+      server.send(200, "text/plain", lastLog);
+    });
+  
+    server.begin();
+  }
+  
+  void loop() {
+    server.handleClient();
+  }
+  </code></pre>
+    </div>
+  </div>
+
+</div>
 </div>
 
 </content>

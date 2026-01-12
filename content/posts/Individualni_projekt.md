@@ -52,6 +52,20 @@ tags = [
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
+        .img-previewm {
+        width: 200px;              /* Velikost náhledu */
+        border-radius: 12px;       /* ZAOBLENÉ ROHY */
+        cursor: pointer;
+        transition: 0.3s ease;
+        border: 1px solid #ddd;
+        display: block;
+        margin: 10px auto;
+    }
+    .img-previewm:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
     /* POP-UP OKNO (MODAL) */
     .modal-overlay {
         display: none;
@@ -82,6 +96,18 @@ tags = [
         cursor: pointer;
         text-decoration: none;
     }
+
+    .img-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.arrow {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
 </style>
 
 
@@ -139,7 +165,7 @@ Hned na počátku jsem narazil na problém s nedostatečným počtem digitální
 
 ### 2.2 Měření frekvence a volba senzorů
 
-Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem.
+Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem. Zároveň to také přidalo uživateli nezávislost na zesilovači a tak mohlo být ukulele využito pouze jako akustické.
 
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
     <img src="/267993_ZPC_25/images/ELEZAPOJENI.jpg" 
@@ -156,7 +182,7 @@ Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě mo
 
 ---
 
-###  Bezdrátové ovládání a design elektroniky
+### 2.3 Bezdrátové ovládání a design elektroniky
 
 Aby byl nástroj co nejvíce čistý („clean“) a bez zbytečných ovládacích prvků, rozhodl jsem se projekt rozšířit o Wi-Fi modul jako možné rozšíření. Díky tomu lze ladění ovládat bezdrátově, například prostřednictvím webového rozhraní nebo mobilní aplikace. Tím jsem se vyhnul nutnosti použití fyzických tlačítek a displejů, které by narušovaly vzhled nástroje. Zároveň jsem se rozhodl propojit pouze komunikaci z wifi modulu do arduina, jelikož jsem odezvu nástroje nepotřeboval.
 
@@ -242,7 +268,7 @@ Níže vidíme nákres celého projektu navržený v prostředí KiCad. Srdcem s
 
 ---
 
-###  Mechanická konstrukce a první prototyp
+### 2.4 Mechanická konstrukce a první prototyp
 
 Dalším krokem byl návrh mechanické části ukulele. Ve 3D CADu jsem vymodeloval první prototyp těla i krku, abych otestoval vůle, usazení motorů, převodů a senzorů. Model jsem vytiskl na 3D tiskárně a všechny díly zkušebně sestavil. Test potvrdil, že většina rozměrů i uložení dílů je správná, což mi umožnilo pokračovat k prvnímu kompletnímu prototypu.
 
@@ -310,7 +336,7 @@ Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem p
 
 ---
 
-###  Iterace konstrukce a testování hry
+### 2.5 Iterace konstrukce a testování hry
 
 Do stavu funkčního prototypu z hlediska samotného hraní jsem se dostal po dalších dvou iteracích, přičemž třetí verze již umožňovala testování hry. Do těla jsem nainstaloval ladicí kolíky, které jsem zaaretoval šrouby. Ty sloužily jak k upevnění ozubených kol na ladicí kolíky, tak k vyvození tření předepnutím, aby nedocházelo k samovolnému povolování strun.
 
@@ -329,7 +355,7 @@ Ukulele jsem ručně naladil a otestoval jeho základní funkčnost. Jak je vid�
 
 ---
 
-###  Napínání strun a ladicí mechanismus
+### 2.6 Napínání strun a ladicí mechanismus
 
 Další testování se zaměřilo na samotné napínání strun. Ukázalo se, že pro dosažení správné frekvence je zapotřebí poměrně velký utahovací moment. Původně jsem používal motory typu BYJ-48 5V, které jsem dále převodoval ozubenými koly v poměru 2:1. Tato konfigurace však nebyla dostatečná ani pro napnutí struny A, natož struny E, která je z hlediska potřebného momentu nejnáročnější.
 
@@ -350,7 +376,7 @@ Postupně jsem proto iteroval převodový poměr a zakoupil silnější motory B
 
 ---
 
-###  Brnkací mechanismus
+### 2.7 Brnkací mechanismus
 
 Testování brnkacího mechanismu přineslo další výzvy. Původně jsem plánoval použití klasického serva s rozsahem 180°, avšak tento rozsah nebyl dostatečný. Kvůli převodu z pastorku na hřeben jsem potřeboval lineární rozsah přibližně 60 mm, což by vyžadovalo příliš velký pastorek. Z tohoto důvodu jsem zvolil kontinuální servo, které bylo nutné ovládat odlišným způsobem.
 
@@ -369,7 +395,7 @@ Samotný brnkací mechanismus vyžadoval další čtyři iterace, během nichž 
 
 ---
 
-###  Software a algoritmus ladění
+### 2.8 Software a algoritmus ladění
 
 Po úspěšném otestování mechaniky následovalo propojení hardwaru se softwarem. Největší výzvou bylo spolehlivé rozpoznání frekvence struny. Kvůli omezené dynamické paměti Arduina bylo obtížné získat korektní výsledky. Použil jsem mikrofon MAX4466 umístěný v blízkosti brnkacího mechanismu. Signál byl zpracováván pomocí rychlé Fourierovy transformace (FFT), ze které byla určena frekvence.
 
@@ -391,7 +417,7 @@ Dále jsem z tohoto datového souboru vybral hodnoty, které si byly blízké ja
 
 ---
 
-###  Automatizované ladění a finální testy
+### 2.9 Automatizované ladění a finální testy
 
 Následovalo přizpůsobení logiky pro automatizované ladění. Jelikož jsem pro brnkání používal kontinuální servo bez enkodéru, bylo nutné tomu uzpůsobit algoritmus. Servo z výchozí polohy Home krokovalo doprava. Jeden krok spočíval v otočení serva po dobu 300 ms, přičemž měřicí okno pro zaznamenávání frekvence se spustilo po 50 ms a trvalo 2 s od počátku otáčení serva. Tento časový posun sloužil k lepšímu potlačení šumu, který servo během pohybu emitovalo.
 
@@ -417,8 +443,87 @@ Díky těmto úpravám se mi podařilo provést první úspěšný test, při kt
 
 ---
 
-###  Tělo a wifi modul
+### 2.10 Tělo a wifi modul
 
+Pro zakrytování těla jsem se rozhodl vymodelovat typický tvar ukulele, rozměrově přizpůsobený tak, aby se do něj vešla elektronika i nosná část. Jako vrchní desku jsem zvolil plexisklo, do kterého jsem vygravíroval technické symboly a značení, jež slouží jako designérské prvky. Pro jejich zvýraznění jsem spáry vzniklé gravírováním vybarvil temperovou barvou. 
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+
+  <div class="img-row">
+    <img src="/267993_ZPC_25/images/DESKA0.jpg"
+         class="img-preview"
+         onclick="document.getElementById('popup6a').style.display='flex'">
+
+<span class="arrow">→</span>
+
+<img src="/267993_ZPC_25/images/DESKA1.jpg"
+         class="img-preview"
+         onclick="document.getElementById('popup6b').style.display='flex'">
+  </div>
+
+  <p style="font-style: italic; font-size: 0.9rem;">
+    Obr. 8: Úprava desky těla
+  </p>
+
+  <!-- Popup levý obrázek -->
+  <div id="popup6a" class="modal-overlay" onclick="this.style.display='none'">
+    <span class="close-x">&times;</span>
+    <img src="/267993_ZPC_25/images/DESKA0.jpg" class="modal-content">
+  </div>
+
+  <!-- Popup pravý obrázek -->
+  <div id="popup6b" class="modal-overlay" onclick="this.style.display='none'">
+    <span class="close-x">&times;</span>
+    <img src="/267993_ZPC_25/images/DESKA1.jpg" class="modal-content">
+  </div>
+
+</div>
+
+Uživatelské rozhraní jsem navrhl tak, aby bylo co nejjednodušší a nejintuitivnější. Přidal jsem tři tlačítka pro ovládání automatizovaného ladění. Kalibrační tlačítko pouze projede brnkacím mechanismem z krajní do krajní polohy, aby bylo zajištěno, že jsou struny dostatečně napnuté pro automatické ladění. Druhé tlačítko spouští ladicí algoritmus po jednosekundové prodlevě a třetí jej zastavuje.
+
+Dále jsem přidal funkce pro manuální utahování a povolování krokových motorů. Proces připojení k modulu spočívá pouze v zadání hesla v nastavení Wi-Fi telefonu a následném zadání IP adresy modulu do webového prohlížeče. Tento postup je tak funkční na všech zařízeních, která jsou schopna se připojit k internetu.
+
+<div class="img-container" style="text-align: center; margin: 2rem 0;">
+    <img src="/267993_ZPC_25/images/APP.png" 
+         class="img-previewm" 
+         onclick="document.getElementById('popup7').style.display='flex'">
+    
+  <p style="font-style: italic; font-size: 0.9rem;">Obr. 9: UI aplikace pro ovládání ELEUKO</p>
+
+  <div id="popup7" class="modal-overlay" onclick="this.style.display='none'">
+        <span class="close-x">&times;</span>
+        <img src="/267993_ZPC_25/images/APP.png" class="modal-content">
+    </div>
+</div>
+
+Po zabudování funkční části do krytu těla bylo nutné provést finální testování všech funkcí a doladit parametry s ohledem na změněné rezonanční frekvence, které vznikly úpravou celé konstrukce. Kód byl upraven s ohledem na horší detekci struny G, u níž docházelo přibližně v jednom z deseti případů k chybnému měření, což bylo pro ladicí algoritmus považováno za poměrně uspokojivý výsledek.
+
+<div style="text-align: center; margin: 15px 0;">
+    <video controls muted playsinline preload="metadata" 
+           style="width:100%; max-width:600px; height:auto; border-radius:10px; display:block; margin:0 auto;">
+        <source src="/267993_ZPC_25/videos/CELEK.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 6 – Ukázka funkcionalit jednotlivých funkcí
+    </p>
+</div>
+
+## 3 Možná vylepšení
+
+Po dokončení projektu následovala sebereflexe. Největším nedostatkem projektu byl omezený prostor a výpočetní limity použitého řešení. Pro stabilnější chod a lepší výsledky bych ve druhé verzi prototypu použil modul ESP32, který nabízí vyšší výpočetní výkon a zároveň úsporu místa, jelikož je menší a eliminuje potřebu samostatného Wi-Fi modulu. Dále by bylo vhodné lépe vyztužit spojení vnitřního těla s krkem nástroje, zlepšit jeho akustické vlastnosti a současně upravit ergonomii pro pohodlnější držení krku.
+
+## 4 Přílohy
+
+###  Kód Arduina
+<div style="max-width: 800px; margin: 2rem auto; text-align:left;">
+  {{< codewindow file="assets/code/ARDUINO.ino" >}}
+</div>
+
+###  Kód Wifi modulu
+<div style="max-width: 800px; margin: 2rem auto; text-align:left;">
+  {{< codewindow file="assets/code/WIFI.ino" >}}
+</div>
 
 </div>
 
