@@ -146,7 +146,7 @@ Ten bude tvořit hrot ovládaný krokovým motorem, jehož pohyb bude přenáše
 
 Po úvodním návrhu a popisu principu samoladicího ukulele jsem se pustil do rešerše elektronických komponent a jejich objednání. Primárním cílem nultého prototypu bylo zapojení všech elektronických komponent a jejich vzájemná komunikace s Arduinem. Tuto část projektu jsem chtěl vyřešit co nejdříve, neboť jsem nikdy dříve s Arduinem ani elektronikou nepracoval, a jednalo se tedy o mou největší výzvu.
 
-Hned na počátku jsem narazil na problém s nedostatečným počtem digitálních pinů Arduina pro ovládání čtyř krokových motorů. Tento problém jsem vyřešil použitím dvou rozšiřujících PCF modulů, které jsou ovládány pomocí dvou analogových pinů a poskytují celkem 16 digitálních výstupů, což přesně odpovídalo mým potřebám.
+Hned na počátku jsem narazil na problém s nedostatečným počtem digitálních pinů Arduina pro ovládání čtyř krokových motorů. Tento problém jsem vyřešil použitím dvou rozšiřujících PCF modulů, které jsou ovládány pomocí dvou analogových pinů a poskytují celkem 16 digitálních výstupů, což přesně odpovídalo mým potřebám. Obvod jsem sestavil a použil jsem pouze zkušební kód pro odečítání frekvence z koupeného ukulele. Pomocí tohoto kódu jsem testoval reakci serva a krokových motorů při přechodu ze struny na strunu.
 
 <div style="text-align: center; margin: 15px 0;">
     <video controls muted playsinline preload="metadata" 
@@ -165,7 +165,7 @@ Hned na počátku jsem narazil na problém s nedostatečným počtem digitální
 
 ### 2.2 Měření frekvence a volba senzorů
 
-Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem. Zároveň to také přidalo uživateli nezávislost na zesilovači a tak mohlo být ukulele využito pouze jako akustické.
+Další problém spočíval v měření frekvence struny. Zvažoval jsem dvě možnosti – odečítání frekvence z piezo senzoru nebo použití mikrofonu. První varianta byla technicky náročnější a přesnější, ale zároveň výrazně dražší, jelikož by vyžadovala kvalitnější senzor. Rozhodl jsem se proto pro řešení pomocí mikrofonu a výstup pro zapojení do zesilovače jsem ponechal zcela nezávislý na obvodu s Arduinem. Zároveň to také přidalo uživateli nezávislost na zesilovači a tak mohlo být ukulele využito také pouze jako akustické. Piezo senzor jsem následně koupil z nižší cenové kategorie, abych rozšířil funkce produktu a zároveň nezvyšoval výrobní náklady.
 
 <div class="img-container" style="text-align: center; margin: 2rem 0;">
     <img src="/267993_ZPC_25/images/ELEZAPOJENI.jpg" 
@@ -338,7 +338,7 @@ Problém však nastal u krku, který nebyl ve vodorovné poloze. Přešel jsem p
 
 ### 2.5 Iterace konstrukce a testování hry
 
-Do stavu funkčního prototypu z hlediska samotného hraní jsem se dostal po dalších dvou iteracích, přičemž třetí verze již umožňovala testování hry. Do těla jsem nainstaloval ladicí kolíky, které jsem zaaretoval šrouby. Ty sloužily jak k upevnění ozubených kol na ladicí kolíky, tak k vyvození tření předepnutím, aby nedocházelo k samovolnému povolování strun.
+Do stavu funkčního prototypu z hlediska samotného hraní jsem se dostal po dalších dvou iteracích, přičemž třetí verze již umožňovala testování hry i mechanismů ladění. Do těla jsem nainstaloval ladicí kolíky, které jsem zaaretoval šrouby. Ty sloužily jak k upevnění ozubených kol na ladicí kolíky, tak k vyvození tření předepnutím, aby nedocházelo k samovolnému povolování strun.
 
 Ukulele jsem ručně naladil a otestoval jeho základní funkčnost. Jak je vidět i slyšet na videu níže, nástroj hraje poměrně čistě a překvapivě se mi na něj hrálo velmi dobře. Je však patrné, že ukulele je poměrně tiché, což jsem předpokládal, a proto jsem přidal piezo senzor pod kobylku.
 
@@ -380,7 +380,7 @@ Postupně jsem proto iteroval převodový poměr a zakoupil silnější motory B
 
 Testování brnkacího mechanismu přineslo další výzvy. Původně jsem plánoval použití klasického serva s rozsahem 180°, avšak tento rozsah nebyl dostatečný. Kvůli převodu z pastorku na hřeben jsem potřeboval lineární rozsah přibližně 60 mm, což by vyžadovalo příliš velký pastorek. Z tohoto důvodu jsem zvolil kontinuální servo, které bylo nutné ovládat odlišným způsobem.
 
-Samotný brnkací mechanismus vyžadoval další čtyři iterace, během nichž jsem ladil parametry trsátka, aby bylo dosaženo dostatečně hlasitého zvuku. Dalším problémem byla změna vzdálenosti strun od těla při jejich napínání. Tento problém jsem vyřešil seřízením krku pomocí šroubu před samotným laděním.
+Samotný brnkací mechanismus vyžadoval další čtyři iterace, během nichž jsem ladil parametry trsátka, aby bylo dosaženo dostatečně hlasitého zvuku. Dalším problémem byla změna vzdálenosti strun od těla při jejich napínání. Tento problém jsem vyřešil seřízením krku pomocí šroubu před samotným laděním a přidáním funkce kalibrace.
 
 <div style="text-align: center; margin: 15px 0;">
     <video controls muted playsinline preload="metadata" 
@@ -421,7 +421,7 @@ Dále jsem z tohoto datového souboru vybral hodnoty, které si byly blízké ja
 
 Následovalo přizpůsobení logiky pro automatizované ladění. Jelikož jsem pro brnkání používal kontinuální servo bez enkodéru, bylo nutné tomu uzpůsobit algoritmus. Servo z výchozí polohy Home krokovalo doprava. Jeden krok spočíval v otočení serva po dobu 300 ms, přičemž měřicí okno pro zaznamenávání frekvence se spustilo po 50 ms a trvalo 2 s od počátku otáčení serva. Tento časový posun sloužil k lepšímu potlačení šumu, který servo během pohybu emitovalo.
 
-Pokud se během měřicího okna nezaznamenala nenulová frekvence, servo pokračovalo dalším krokem stejným směrem. V opačném případě se otočil krokový motor příslušné struny, určené podle počítadla strun. Struna se tímto krokem částečně naladila, avšak nebylo známo, do jaké míry. Krokování pro doladění stejné struny proto muselo pokračovat. Krok následující po pohybu krokového motoru byl vždy proveden opačným směrem. Tento algoritmus se opakoval, dokud nebyla naměřena frekvence v toleranci ±1 Hz od požadované hodnoty.
+Pokud se během měřicího okna nezaznamenala nenulová frekvence, servo pokračovalo dalším krokem stejným směrem. V opačném případě se otočil krokový motor příslušné struny, určené podle počítadla strun. Struna se tímto krokem částečně naladila, avšak nebylo známo, do jaké míry. Krokování pro doladění stejné struny proto muselo pokračovat. Krok následující po pohybu krokového motoru byl vždy proveden opačným směrem. Tento algoritmus se opakoval, dokud nebyla naměřena frekvence v toleranci ±0.5 Hz od požadované hodnoty.
 
 Jakmile došlo k naměření správné frekvence, následoval přesun na další strunu. Zde mohly nastat dvě situace. Pokud byl poslední krok proveden doprava, krokování pokračovalo stejným směrem, dokud nezazněla další struna. Pokud byl poslední krok proveden doleva, změnil se směr krokování a jedno nenulové měřicí okno bylo ignorováno.
 
@@ -509,9 +509,37 @@ Po zabudování funkční části do krytu těla bylo nutné provést finální 
     </p>
 </div>
 
+<div style="text-align: center; margin: 15px 0;">
+    <div style="
+        width:100%;
+        max-width:600px;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border-radius:10px;
+        margin: 0 auto;
+    ">
+        <video controls muted playsinline preload="metadata"
+               style="
+                   width:100%;
+                   height:100%;
+                   object-fit: cover;
+               ">
+            <source src="/267993_ZPC_25/videos/ELEHRANI.mp4" type="video/mp4">
+            Váš prohlížeč nepodporuje přehrávání videa.
+        </video>
+    </div>
+
+<p style="transform: skewX(-10deg); display: inline-block; margin-top: 5px;">
+        Video 7 – Ukázka funkcionalit jednotlivých funkcí
+    </p>
+</div>
+
+
 ## 3 Možná vylepšení
 
 Po dokončení projektu následovala sebereflexe. Největším nedostatkem projektu byl omezený prostor a výpočetní limity použitého řešení. Pro stabilnější chod a lepší výsledky bych ve druhé verzi prototypu použil modul ESP32, který nabízí vyšší výpočetní výkon a zároveň úsporu místa, jelikož je menší a eliminuje potřebu samostatného Wi-Fi modulu. Dále by bylo vhodné lépe vyztužit spojení vnitřního těla s krkem nástroje, zlepšit jeho akustické vlastnosti a současně upravit ergonomii pro pohodlnější držení krku.
+
+Další možnou tendencí projektu z mé strany je jeho komercializace. Před jejím zahájením by bylo nutné stanovit investiční plán a vstoupit na některou z internetových investičních platforem určených pro startupy za účelem získání počátečního kapitálu. Nezbytná by byla také úprava konstrukce pro výrobu na vstřikovacím lisu a vývoj vlastní programovatelné desky. Značka startupu by se měla orientovat na prémiové samoladicí nástroje, které by byly vyráběny s důrazem na design a ergonomii přizpůsobené každému uživateli.
 
 ## 4 Přílohy
 
